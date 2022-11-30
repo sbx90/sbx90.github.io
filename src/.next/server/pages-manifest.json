@@ -1,0 +1,11 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/": "pages/index.html",
+  "/portfolio/raina": "pages/portfolio/raina.html",
+  "/portfolio/tag": "pages/portfolio/tag.html",
+  "/portfolio/vt-cam": "pages/portfolio/vt-cam.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
+}
