@@ -24,6 +24,7 @@ jobs:
         with:
           node-version: 14
           cache: 'npm'
+          cache-dependency-path: src/package-lock.json
       - run: npm install --legacy-peer-deps
       - run: npm run build
         env:
