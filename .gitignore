@@ -36,3 +36,40 @@ yarn-error.log*
 *.bak
 
 old
+
+
+# dependencies
+/src/node_modules
+/src/src/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/src/.next/
+/src/out/
+
+# production
+/src/build
+
+# misc
+/src/.DS_Store
+/src/*.pem
+
+# debug
+/src/npm-debug.log*
+/src/yarn-debug.log*
+/src/yarn-error.log*
+
+# local env files
+/src/.env.local
+/src/.env.development.local
+/src/.env.test.local
+/src/.env.production.local
+
+# vercel
+/src/.vercel
+
+# typescript
+/src/*.tsbuildinfo
