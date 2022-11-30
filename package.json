@@ -10,8 +10,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://sbx90.github.io/",
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
-  }
+  "homepage": "https://sbx90.github.io/"
 }
