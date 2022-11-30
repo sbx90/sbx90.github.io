@@ -8,16 +8,16 @@
     "build": "next build && next export",
     "analyze": "cross-env ANALYZE=true next build",
     "start": "next start -p $PORT",
+    "predeploy": "npm run build",
+    "postbuild": "cp -a out/. ../build && touch ../build/.nojekyll",
+    "deploy": "gh-pages -d build",
     "lint": "cross-env NODE_ENV=production eslint '**/*.{js,jsx,ts,tsx,sass,scss}'",
     "lint-staged": "lint-staged",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,sass,scss}'",
     "test": "jest -c test/jest.config.js",
     "test:watch": "jest -c test/jest.config.js --watch",
     "test:coverage": "jest -c test/jest.config.js --coverage",
-    "export": "cross-env NODE_ENV=production next build && next export",
-    "predeploy": "npm run build",
-    "postbuild": "cp -a out/. ../build && touch ../build/.nojekyll",
-    "deploy": "gh-pages -d build"
+    "export": "cross-env NODE_ENV=production next build && next export"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
