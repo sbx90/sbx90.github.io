@@ -1,8 +1,8 @@
 {
-  "name": "mercury",
+  "name": "sbx",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://mercury.themebiotic.com/",
+  "homepage": "https://ashkaro777.github.io/",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
