@@ -17,7 +17,9 @@
     "test": "jest -c test/jest.config.js",
     "test:watch": "jest -c test/jest.config.js --watch",
     "test:coverage": "jest -c test/jest.config.js --coverage",
-    "export": "cross-env NODE_ENV=production next build && next export"
+    "export": "cross-env NODE_ENV=production next build && next export",
+    "deploy:new": "next build && next export && npm run commit-build",
+    "commit-build": "git add out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
