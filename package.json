@@ -5,7 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd src && npm run build"
+    "build": "cd src && npm run deploy:new",
+    "move-build:old": "copy -a ./src/out/. ../build && touch ../build/.nojekyll",
+    "move-build:old-1": "xcopy /s ./src/out/. ../build",
+    "move-build": "xcopy src\\out\\*.* build /s /i /y",
+    "commit-build": "git pull && git add -f build && git commit -m \"Deploy gh-pages\" && git subtree push --prefix build origin gh-pages && git push"
   },
   "keywords": [],
   "author": "",
