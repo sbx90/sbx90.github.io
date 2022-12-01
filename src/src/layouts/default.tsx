@@ -40,6 +40,7 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
   footer,
   children,
   hideFooter,
+  contentContainerProps,
 }): JSX.Element => {
   return (
     <>
@@ -50,7 +51,9 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
           <HeaderDefault isDark={darkHeader} isSticky={stickyHeader} />
         </ModalAccountProvider>
       )}
-      <Box pt={header ? "" : "156px"}>{children}</Box>
+      <Box pt={header ? "" : "156px"} {...contentContainerProps}>
+        {children}
+      </Box>
       {!hideFooter && (footer ? footer : <FooterDefault />)}
     </>
   );

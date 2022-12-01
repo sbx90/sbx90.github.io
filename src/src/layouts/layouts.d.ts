@@ -1,3 +1,5 @@
+import { ChakraProps, ThemingProps } from "@chakra-ui/react";
+
 declare namespace ILayout {
   export interface IProps {
     children: React.ReactNode;
@@ -7,6 +9,7 @@ declare namespace ILayout {
     footer?: React.ReactNode;
     aside?: React.ReactNode;
     hideFooter?: boolean;
+    contentContainerProps?: ChakraProps & ThemingProps;
   }
 }
 

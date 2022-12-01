@@ -204,7 +204,11 @@ const FeaturesBlock: React.FC<
 });
 
 Homepage.PageLayout = memo(({ children }: { children: React.ReactNode }) => {
-  return <Layout stickyHeader>{children}</Layout>;
+  return (
+    <Layout stickyHeader contentContainerProps={{ pt: "28px" }}>
+      {children}
+    </Layout>
+  );
 });
 
 export default Homepage;

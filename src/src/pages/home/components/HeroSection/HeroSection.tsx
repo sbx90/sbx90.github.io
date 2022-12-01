@@ -28,7 +28,7 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
       />
 
       <Flex
-        py={28}
+        pb={28}
         height="100vh"
         justify="center"
         align="center"

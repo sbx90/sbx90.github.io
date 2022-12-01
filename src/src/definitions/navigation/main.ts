@@ -8,7 +8,7 @@ export enum SECTION_ID {
 export const main = [
   {
     title: "About us",
-    href: `#${SECTION_ID.ABOUT_SECTION}`,
+    href: `/about`,
   },
   {
     title: "Our services",

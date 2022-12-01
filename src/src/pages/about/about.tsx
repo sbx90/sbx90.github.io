@@ -1,21 +1,15 @@
-import React from "react";
+import React, { memo } from "react";
 
-import {
-  Box,
-  ChakraProps,
-  Container,
-  Text,
-  ThemingProps,
-} from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
+
+import Layout from "@layouts/default";
 
 import OurExperienceSection from "../home/components/OurExperienceSection";
 import OurTeamSection from "../home/components/OurTeamSection";
 
-interface IAboutPagePage extends ChakraProps, ThemingProps {}
-
-const About: React.FC<IAboutPagePage> = (props) => {
+const About = (): JSX.Element => {
   return (
-    <Container maxW="container.xl" {...props}>
+    <Container maxW="container.xl">
       <Box maxW="756px" px="md" mx="auto" textAlign="center" fontSize="lg">
         <Text>
           Based in Florida, SBX has it's roots in an American company and family
@@ -41,5 +35,9 @@ const About: React.FC<IAboutPagePage> = (props) => {
     </Container>
   );
 };
+
+About.PageLayout = memo(({ children }: { children: React.ReactNode }) => {
+  return <Layout stickyHeader>{children}</Layout>;
+});
 
 export default About;
