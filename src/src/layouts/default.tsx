@@ -4,7 +4,7 @@ import { IHeader } from "src/components/header/header";
 
 import dynamic from "next/dynamic";
 
-import { Spinner, ChakraProps } from "@chakra-ui/react";
+import { Spinner, ChakraProps, Box } from "@chakra-ui/react";
 
 import { ModalAccountProvider } from "@definitions/context/modal.account";
 import { __DEV__ } from "@definitions/utils";
@@ -50,7 +50,7 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
           <HeaderDefault isDark={darkHeader} isSticky={stickyHeader} />
         </ModalAccountProvider>
       )}
-      {children}
+      <Box pt={header ? "" : "156px"}>{children}</Box>
       {!hideFooter && (footer ? footer : <FooterDefault />)}
     </>
   );

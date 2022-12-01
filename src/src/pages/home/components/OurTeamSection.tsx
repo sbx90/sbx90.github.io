@@ -4,11 +4,13 @@ import styled from "styled-components";
 
 import {
   Box,
+  ChakraProps,
   Container,
   Grid,
   Heading,
   SimpleGrid,
   Text,
+  ThemingProps,
 } from "@chakra-ui/react";
 
 import GiancarloBrigante from "@assets/images/team/Giancarlo-Bregante.png";
@@ -70,9 +72,11 @@ const TeamMember: React.FC<{
   );
 };
 
-const OurTeamSection: React.FC = () => {
+interface IOurTeamSection extends ChakraProps, ThemingProps {}
+
+const OurTeamSection: React.FC<IOurTeamSection> = (props) => {
   return (
-    <Box width="full" position="relative" px="8">
+    <Box width="full" position="relative" px="8" {...props}>
       <Container maxW="container.lg">
         <Heading mb="4">Our Team</Heading>
 

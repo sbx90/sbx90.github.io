@@ -8,7 +8,6 @@ import CarouselDefault from "@components/carousel/carousel-default";
 import { RatingDefault } from "@components/rating";
 import { TestimonialBlurredBackdrop } from "@components/testimonials/testimonial-blurred-backdrop";
 
-import AvatarImage from "@assets/images/avatar-1.jpg";
 import BackgroundOne from "@assets/testiomial-bg-1.svg";
 
 const TESTIMONY_LIST = [

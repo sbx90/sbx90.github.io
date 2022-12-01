@@ -2,7 +2,15 @@ import React from "react";
 
 import styled from "styled-components";
 
-import { Box, Heading, Container, Text, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Container,
+  Text,
+  Grid,
+  ChakraProps,
+  ThemingProps,
+} from "@chakra-ui/react";
 
 import ExperienceImage from "@assets/images/home/experience.jpg";
 
@@ -47,9 +55,11 @@ const Feature: React.FC<{ title: string; description: string }> = ({
   );
 };
 
-const OurExperienceSection: React.FC = () => {
+interface IOurExperienceSection extends ChakraProps, ThemingProps {}
+
+const OurExperienceSection: React.FC<IOurExperienceSection> = (props) => {
   return (
-    <Box width="full">
+    <Box width="full" {...props}>
       <Container maxW="container.lg">
         <Heading>Our Experience</Heading>
 
