@@ -19,7 +19,6 @@ import FeaturesListVertical from "@blocks/mobileapp/features-list-vertical";
 const CapabilitiesSection: React.FC = () => {
   const { isScreenSmallerThanTablet } = useScreenType();
 
-  console.log({ isScreenSmallerThanTablet });
   return (
     <Box width="full" id={SECTION_ID.OUR_SERVICES_SECTION}>
       <Container maxW="container.lg">
@@ -84,7 +83,7 @@ const CapabilitiesSection: React.FC = () => {
           marginTop="16"
         >
           <FeaturesListVertical
-              showContentFirst={!isScreenSmallerThanTablet}
+            showContentFirst={!isScreenSmallerThanTablet}
             title="Web & Mobile Apps"
             body={[
               "Apps connect users with products, valuable information and key services in real time but behind every APP, there is a huge technological effort and managerial challenge aimed to deliver seamless experiences.",
