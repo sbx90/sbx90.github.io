@@ -195,6 +195,10 @@ const StyledButton = styled.button<{ $dark?: boolean }>`
     bottom: 5rem;
     right: 1rem;
   }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
 
 const MobileNavButton = memo(() => {
