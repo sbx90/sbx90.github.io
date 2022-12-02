@@ -4,13 +4,12 @@ import styled from "styled-components";
 
 import NextLink from "next/link";
 
-import { ChevronDownIcon, CloseIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   Flex,
   HStack,
-  IconButton,
   Menu,
   MenuButton,
   MenuDivider,

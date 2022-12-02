@@ -31,7 +31,7 @@ const FooterLargeNavigationAppstore: React.FC<ChakraProps> = (props) => {
                     href={link.href}
                     color="#000"
                     fontWeight="300"
-                    fontSize="21px"
+                    fontSize={["18px", "18px", "21px"]}
                   >
                     {link.title}
                   </Link>

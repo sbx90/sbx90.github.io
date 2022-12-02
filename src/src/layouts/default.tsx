@@ -9,6 +9,7 @@ import { Spinner, ChakraProps, Box } from "@chakra-ui/react";
 import { ModalAccountProvider } from "@definitions/context/modal.account";
 import { __DEV__ } from "@definitions/utils";
 
+import useScreenType from "../hooks/useScreenType";
 import { ILayout } from "./layouts";
 
 const HeaderDefault = dynamic<IHeader.IProps>(
@@ -42,6 +43,8 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
   hideFooter,
   contentContainerProps,
 }): JSX.Element => {
+  const { isScreenSmallerThanTablet } = useScreenType();
+
   return (
     <>
       {header ? (
@@ -51,7 +54,10 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
           <HeaderDefault isDark={darkHeader} isSticky={stickyHeader} />
         </ModalAccountProvider>
       )}
-      <Box pt={header ? "" : "156px"} {...contentContainerProps}>
+      <Box
+        pt={header ? "" : isScreenSmallerThanTablet ? "110px" : "156px"}
+        {...contentContainerProps}
+      >
         {children}
       </Box>
       {!hideFooter && (footer ? footer : <FooterDefault />)}

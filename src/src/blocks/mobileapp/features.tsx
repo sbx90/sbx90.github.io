@@ -67,9 +67,8 @@ const Features: React.FC<
       >
         <Stack
           direction={[
-            "column",
-            "column",
-            showContentFirst ? "row-reverse" : "row",
+            "column-reverse",
+            "column-reverse",
             showContentFirst ? "row-reverse" : "row",
           ]}
           alignItems={["unset", "unset", "center", "center"]}

@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import React from "react";
 
 import {
@@ -19,13 +21,20 @@ import { useContactUsModal } from "@blocks/contact-us-modal";
 
 const ConsultancySection: React.FC = () => {
   const { onOpen } = useContactUsModal();
+  const { isScreenSmallerThanTablet } = useScreenType();
 
   return (
     <Box width="full" position="relative" background="#ECF2F8">
       {false && <FuildAnimatedDisplay />}
 
       <Container maxW="container.xl">
-        <Flex w="full" h={"100vh"}>
+        <Flex
+          w="full"
+          minHeight={"100vh"}
+          py={[8, 8, 12]}
+          gap={[8, 8, 12]}
+          flexDirection={isScreenSmallerThanTablet ? "column" : "row"}
+        >
           <VStack justify="center" px={[4, 4, 8]}>
             <Stack color="black" maxW={"2xl"} align={"flex-start"} spacing={6}>
               <Heading>Consultancy</Heading>

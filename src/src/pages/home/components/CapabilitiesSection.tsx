@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import React from "react";
 
 import { Box, createIcon, Heading, Container, Flex } from "@chakra-ui/react";
@@ -15,6 +17,9 @@ import AppFeatures from "@blocks/mobileapp/features";
 import FeaturesListVertical from "@blocks/mobileapp/features-list-vertical";
 
 const CapabilitiesSection: React.FC = () => {
+  const { isScreenSmallerThanTablet } = useScreenType();
+
+  console.log({ isScreenSmallerThanTablet });
   return (
     <Box width="full" id={SECTION_ID.OUR_SERVICES_SECTION}>
       <Container maxW="container.lg">
@@ -46,7 +51,7 @@ const CapabilitiesSection: React.FC = () => {
         >
           <Container py={0} maxWidth="container.xl">
             <FeaturesListVertical
-              showContentFirst
+              showContentFirst={!isScreenSmallerThanTablet}
               title="BackEnd Development"
               body="We believe BackEnd requires perfect synergy of teams and a full understanding of the complete project's picture in the long run. At SBX we are experts in achieving complex structures and working with flexibility to guarantee scalable work with continuous integration and sophistication."
               image={BackendImage}
@@ -79,7 +84,7 @@ const CapabilitiesSection: React.FC = () => {
           marginTop="16"
         >
           <FeaturesListVertical
-            showContentFirst
+              showContentFirst={!isScreenSmallerThanTablet}
             title="Web & Mobile Apps"
             body={[
               "Apps connect users with products, valuable information and key services in real time but behind every APP, there is a huge technological effort and managerial challenge aimed to deliver seamless experiences.",

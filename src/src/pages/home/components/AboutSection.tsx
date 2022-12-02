@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import React from "react";
 
 import {
@@ -35,24 +37,31 @@ const FeatureTile: React.FC<{ image: string; altText: string }> = ({
 };
 
 const AboutSection: React.FC = () => {
+  const { isScreenSmallerThanTablet } = useScreenType();
+
   return (
     <Box width="full" id={SECTION_ID.ABOUT_SECTION}>
       <Container maxW="container.lg">
-        <Flex>
+        <Flex flexWrap="wrap">
           <VStack align="start" width="full" spacing={6}>
             <Heading>
               The world of Software and APP Development can be complex
             </Heading>
           </VStack>
 
-          <VStack align="start" width="full" spacing={6}>
+          <VStack
+            align="start"
+            width="full"
+            spacing={6}
+            height={isScreenSmallerThanTablet ? "100px" : "50px"}
+          >
             <Annotation
               as={CustomArrow} // custom annotation arrow
               color={"#1250E2"}
               strokeWidth={2}
               h={50}
               w={135}
-              left="-30px"
+              left={isScreenSmallerThanTablet ? "" : "-30px"}
               bottom="-50px"
               transform="rotate(335deg) scaleX(-1)"
             >

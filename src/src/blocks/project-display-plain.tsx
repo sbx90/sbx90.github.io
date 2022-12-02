@@ -23,6 +23,8 @@ import { ChakraProps, ThemingProps } from "@chakra-ui/system";
 import { useRefScrollProgress } from "@definitions/hooks/useRefScrollProgress";
 import { __DEV__ } from "@definitions/utils";
 
+import useScreenType from "../hooks/useScreenType";
+
 const StyledLogo = styled.img`
   height: 48px;
   object-fit: contain;
@@ -48,6 +50,7 @@ const ProjectDisplayPlain: React.FC<
   height = "130vh",
   ...rest
 }): JSX.Element => {
+  const { isScreenSmallerThanTablet } = useScreenType();
   const ref = useRef<HTMLDivElement | null>(null);
   const box = useRefScrollProgress(ref, 0);
 
@@ -92,10 +95,13 @@ const ProjectDisplayPlain: React.FC<
                 </Box>
               )}
 
-              <Heading fontSize="5xl" mb="4">
+              <Heading
+                fontSize={isScreenSmallerThanTablet ? "3xl" : "5xl"}
+                mb="4"
+              >
                 {title}
               </Heading>
-              <Text fontSize="2xl" mb="6">
+              <Text fontSize={isScreenSmallerThanTablet ? "lg" : "2xl"} mb="6">
                 {description}
               </Text>
 

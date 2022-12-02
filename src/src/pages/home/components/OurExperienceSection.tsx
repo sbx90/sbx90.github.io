@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import React from "react";
 
 import styled from "styled-components";
@@ -58,13 +60,19 @@ const Feature: React.FC<{ title: string; description: string }> = ({
 interface IOurExperienceSection extends ChakraProps, ThemingProps {}
 
 const OurExperienceSection: React.FC<IOurExperienceSection> = (props) => {
+  const { isScreenSmallerThanTablet } = useScreenType();
+
   return (
     <Box width="full" {...props}>
       <Container maxW="container.lg">
         <Heading>Our Experience</Heading>
 
         <Grid
-          templateColumns={["1fr 1fr", "1fr 1fr", "5fr 4fr", "5fr 4fr"]}
+          templateColumns={
+            isScreenSmallerThanTablet
+              ? ""
+              : ["1fr 1fr", "1fr 1fr", "5fr 4fr", "5fr 4fr"]
+          }
           gap="8"
           mt="8"
         >

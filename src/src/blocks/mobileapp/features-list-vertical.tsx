@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import { memo, useRef, isValidElement } from "react";
 
 import {
@@ -50,6 +52,7 @@ const FeaturesListVertical: React.FC<
   showContentFirst,
   ...rest
 }): JSX.Element => {
+  const { isScreenSmallerThanTablet } = useScreenType();
   const ref = useRef<HTMLDivElement | null>(null);
   const box = useRefScrollProgress(ref, 0);
 
@@ -96,7 +99,11 @@ const FeaturesListVertical: React.FC<
             style={{
               scale: boxScale,
               translateY: translateY,
-              translateX: showContentFirst ? 120 : -120,
+              translateX: isScreenSmallerThanTablet
+                ? 0
+                : showContentFirst
+                ? 120
+                : -120,
             }}
           >
             <Box mx="auto" width="fit-content">
