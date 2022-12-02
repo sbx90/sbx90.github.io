@@ -1,8 +1,10 @@
 import { memo, useCallback, useContext } from "react";
 
+import styled from "styled-components";
+
 import NextLink from "next/link";
 
-import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, CloseIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -14,6 +16,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -26,6 +29,7 @@ import { main } from "@definitions/navigation/main";
 import { __DEV__ } from "@definitions/utils";
 import customScrollbar from "@definitions/utils/scrollbar";
 
+import HamburgerIcon from "@components/hamburger-icon";
 import { LogoWithSiteName } from "@components/logo/logo-with-site-name-interactive";
 import ThemeSwitch from "@components/theme-switch";
 
@@ -50,7 +54,6 @@ const NavbarDefault: React.FC<INavbar.IProps> = ({
         // rounded={"full"}
         // ref={scrollRef}
         py={5}
-        overflowX="auto"
         sx={customScrollbar()}
         {...rest}
       >
@@ -170,22 +173,54 @@ if (__DEV__) {
   MenuSubItem.displayName = "MenuSubItem";
 }
 
+const StyledButton = styled.button<{ $dark?: boolean }>`
+  --size: 80px;
+  width: var(--size);
+  height: var(--size);
+  min-width: var(--size);
+  min-height: var(--size);
+
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border-radius: 100rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 768px) {
+    --size: 48px;
+    bottom: 5rem;
+    right: 1rem;
+  }
+`;
+
 const MobileNavButton = memo(() => {
+  const { colorMode } = useColorMode();
   const { state, dispatch } = useContext(MobileMenuCtx);
   const toggleHandler = useCallback(() => {
     dispatch({
       type: MobileMenuActions.TOGGLE,
     });
   }, [dispatch]);
+
   return (
-    <IconButton
-      size={"md"}
-      icon={state.isOpen ? <CloseIcon /> : <HamburgerIcon />}
-      aria-label="Open Menu"
-      display={{ md: "none" }}
-      onClick={toggleHandler}
-    />
+    <StyledButton onClick={toggleHandler} $dark={colorMode === "dark"}>
+      <HamburgerIcon active={state.isOpen} color="#fff" />
+    </StyledButton>
   );
+
+  // return (
+  //   <IconButton
+  //     size={"md"}
+  //     icon={state.isOpen ? <CloseIcon /> : <HamburgerIcon />}
+  //     aria-label="Open Menu"
+  //     display={{ md: "none" }}
+  //     onClick={toggleHandler}
+  //   />
+  // );
 });
 
 if (__DEV__) {

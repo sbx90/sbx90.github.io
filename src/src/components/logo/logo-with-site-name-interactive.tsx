@@ -39,7 +39,14 @@ const StyledName = styled.span`
 export const LogoWithSiteName: React.FC<ChakraProps> = (props): JSX.Element => {
   const color = useColorModeValue("gray.800", "white");
   return (
-    <Flex color={color} display="flex" alignItems="center" {...props}>
+    <Flex
+      color={color}
+      display="flex"
+      alignItems="center"
+      position="relative"
+      left="-14px"
+      {...props}
+    >
       <StyledGlobe
         width={72}
         height={72}

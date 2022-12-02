@@ -36,11 +36,11 @@
     ]
   },
   "..\\src\\layouts\\default.tsx -> @components/header": {
-    "id": 7859,
+    "id": 4252,
     "files": [
-      "static/chunks/876-4ef5ab90820df7db.js",
+      "static/chunks/876-f6f5ea73c85594a7.js",
       "static/chunks/799.81c5f6b7fdad1e83.js",
-      "static/chunks/859.a549ea0060843393.js"
+      "static/chunks/252.1e9aaf1368a82eb2.js"
     ]
   },
   "..\\src\\pages\\home\\components\\HeroSection\\components\\utils\\main.ts -> hammerjs": {
