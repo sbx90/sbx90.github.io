@@ -79,8 +79,13 @@ const ProjectDisplayPlain: React.FC<
         }}
       >
         <Box width="full" ref={ref} height={height} py={16} position="relative">
-          <Container maxW="container.xl">
-            <Box maxWidth="560px">
+          <Container
+            maxW="container.xl"
+            pointerEvents="none"
+            position="relative"
+            zIndex={1}
+          >
+            <Box maxWidth="560px" pointerEvents="all">
               {!!logo && (
                 <Box mb="4">
                   <StyledLogo src={logo} alt="" />

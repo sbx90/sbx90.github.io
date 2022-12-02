@@ -1,3 +1,5 @@
+import Spline from "@splinetool/react-spline";
+
 import { Box } from "@chakra-ui/react";
 
 import RainaLogo from "@assets/images/branding/raina-logo.png";
@@ -10,6 +12,7 @@ import RainaScreenshot5 from "@assets/images/projects/raina/raina-5.png";
 
 import ProjectDisplay from "@blocks/project-display";
 
+import Raina from "./components/Raina";
 import Vtcam from "./components/Vtcam";
 
 const RAINA_SCREENSHOTS_DATA = [
@@ -98,6 +101,8 @@ const SCREENSHOTS_DATA = [
 const ProjectsSection: React.FC = (): JSX.Element => {
   return (
     <Box>
+      <Raina />
+
       <ProjectDisplay
         logo={RainaLogo.src}
         background="#B8CBEF"
