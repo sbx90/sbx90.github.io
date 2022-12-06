@@ -1,12 +1,9 @@
 import React from "react";
 
-import styled from "styled-components";
-
 import {
   Box,
   ChakraProps,
   Container,
-  Grid,
   Heading,
   SimpleGrid,
   Text,

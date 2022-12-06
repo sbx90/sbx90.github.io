@@ -42,7 +42,7 @@ const AboutSection: React.FC = () => {
   return (
     <Box width="full" id={SECTION_ID.ABOUT_SECTION}>
       <Container maxW="container.lg">
-        <Flex flexWrap="wrap">
+        <Flex flexWrap={["wrap", "wrap", "wrap", "nowrap"]}>
           <VStack align="start" width="full" spacing={6}>
             <Heading>
               The world of Software and APP Development can be complex
@@ -54,6 +54,9 @@ const AboutSection: React.FC = () => {
             width="full"
             spacing={6}
             height={isScreenSmallerThanTablet ? "100px" : "50px"}
+            mt={["8", "8", "8", "0"]}
+            ml={["16", "20", "20", "0"]}
+            // transform={["rotate(7deg)", "rotate(7deg)", "rotate(7deg)", "0"]}
           >
             <Annotation
               as={CustomArrow} // custom annotation arrow

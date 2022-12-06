@@ -5,7 +5,6 @@ import React, { useContext, memo } from "react";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   chakra,
@@ -49,6 +48,8 @@ import RainaScreenshotMobile2 from "@assets/images/projects/raina/raina-2.png";
 // import RainaScreenshot3 from "@assets/images/projects/raina/raina-3.png";
 import RainaScreenshotHero from "@assets/images/projects/raina/raina-4.png";
 import RainaScreenshotMobile1 from "@assets/images/projects/raina/raina-5.png";
+
+import PartnershipWithGbx from "@blocks/partnership-with-gbx";
 
 const CustomerStoryOverviewPage: React.FC = () => {
   const theme = useContext(ThemeColorContext);
@@ -120,7 +121,7 @@ const CustomerStoryOverviewPage: React.FC = () => {
   ];
 
   return (
-    <Box pt={12}>
+    <Box>
       <NextSeo
         title="Raina"
         description="Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes."
@@ -271,6 +272,8 @@ const CustomerStoryOverviewPage: React.FC = () => {
             }
           />
         )}
+
+        <PartnershipWithGbx mt="12" mb="16" />
       </chakra.main>
     </Box>
   );

@@ -72,11 +72,12 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
             >
               We&nbsp;
               <TextScrollAnimator
-                height={isScreenSmallerThanTablet ? "33px" : "83px"}
+                height={isScreenSmallerThanTablet ? "28px" : "83px"}
                 itemList={["think", "develop", "create"]}
                 style={{
                   position: "relative",
-                  bottom: isScreenSmallerThanTablet ? "-7px" : "-19px",
+                  // bottom: isScreenSmallerThanTablet ? "-5px" : "-19px",
+                  bottom: isScreenSmallerThanTablet ? "0" : "-19px",
                   textAlign: "left",
                   color: "#1250E2",
                 }}
@@ -94,9 +95,10 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
               color="#000000"
               background="#D9D9D9"
               border="1px solid A9A9A9"
-              size="lg"
+              size="28"
               fontSize={isScreenSmallerThanTablet ? "24px" : "28px"}
-              p="8"
+              px="6"
+              py="6"
               fontWeight="500"
               boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
             >

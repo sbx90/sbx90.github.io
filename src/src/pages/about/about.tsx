@@ -4,6 +4,8 @@ import { Box, Container, Text } from "@chakra-ui/react";
 
 import Layout from "@layouts/default";
 
+import PartnershipWithGbx from "@blocks/partnership-with-gbx";
+
 import OurExperienceSection from "../home/components/OurExperienceSection";
 import OurTeamSection from "../home/components/OurTeamSection";
 
@@ -32,6 +34,8 @@ const About = (): JSX.Element => {
       <OurExperienceSection mt="16" />
 
       <OurTeamSection my="16" />
+
+      <PartnershipWithGbx my="16" />
     </Container>
   );
 };

@@ -21,7 +21,7 @@ const StyledContainer = styled.div<{ $itemCount: number; $height: string }>`
   ${({ $itemCount = 0, $height }) =>
     getSlideAnitmationString($itemCount, $height)}
 
-  ${StyledItem}:nth-child(0) {
+  ${StyledItem}:first-child() {
     animation: slide 5s linear infinite;
   }
 `;

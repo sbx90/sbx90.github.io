@@ -5,7 +5,6 @@ import React, { useContext, memo } from "react";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   chakra,
@@ -30,7 +29,6 @@ import {
   useToken,
 } from "@chakra-ui/react";
 
-import BlenderLogo from "@definitions/brands/blender";
 import Logo1 from "@definitions/brands/logo-1";
 import Logo2 from "@definitions/brands/logo-2";
 import Logo5 from "@definitions/brands/logo-5";
@@ -41,129 +39,92 @@ import DividerCurve from "@components/divider/divider-curve";
 import DividerTilt from "@components/divider/divider-tilt";
 import ImageLazyload from "@components/image-lazyload";
 
-import BlenderScreen1Image from "@assets/images/blender-screen-1.jpg?resize&img";
-import BlenderScreen2Image from "@assets/images/blender-screen-2.jpg?resize&img";
-import BlenderScreen3Image from "@assets/images/blender-screen-3.jpg?resize&img";
-import BlenderScreen4Image from "@assets/images/blender-screen-4.jpg?resize&img";
-import BlenderScreen5Image from "@assets/images/blender-screen-5.jpg?resize&img";
-import BlenderScreenImage from "@assets/images/blender-screen.jpg?resize&img";
+import ExactLogo from "@assets/images/branding/exact-logo.png";
 import Office1 from "@assets/images/office-1.jpg?resize&img";
 import Office2 from "@assets/images/office-2.jpg?resize&img";
 import Office3 from "@assets/images/office-3.jpg?resize&img";
-import Office6 from "@assets/images/office-6.jpg?resize&img";
+import Image1 from "@assets/images/projects/vtcam/vtcam-1.png";
+import Image2 from "@assets/images/projects/vtcam/vtcam-2.png";
+import AppScreenshotHero from "@assets/images/projects/vtcam/vtcam-3.png";
+
+import PartnershipWithGbx from "@blocks/partnership-with-gbx";
 
 const CustomerStoryOverviewPage: React.FC = () => {
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme;
 
-  const heroBG = useColorModeValue(`${color}.50`, `${color}.800`);
-  const accentColor = useColorModeValue(`${color}.500`, `${color}.300`);
-  const textMuted = useColorModeValue("gray.500", "gray.500");
-
   /* ----------------------------- Page Contents ---------------------------- */
   const content: T_Content[] = [
     {
-      heading: "The Company",
+      heading: "Our Work",
       body: [
         {
           content:
-            "Between January 2020 and March 2021 we were quite busy at Ubisoft Animation Studio (in-house studio of Ubisoft Film & Television) working on a 70min long special episode of our TV series Rabbids Invasion. This episode is named Rabbids Invasion: Mission to Mars and it will be released at the end of the summer on France Television and on Netflix worldwide in 2022.",
+            "Our client offers training services and athlete performance analysis, for which he uses high-resolution video-capturing cameras. These cameras had an outdated system that needed to be updated both to meet market standards and to reduce and optimize costs.",
         },
         {
           content:
-            "We handled the storyboard, previz and editing stages internally while the following steps were done by partners studios: Supamonks, which worked mostly on Blender, Anima for a great part of the animation and Miroslav Pilon studio for the sounds and voices. To facilitate the production the movie was divided into 3 acts of about 23’ each. We chose to use the version 2.83 of Blender because it was a LTS and we needed stability on the project.",
+            "We approached this project in a complete manner, working on the redesign of the Hardware and Software systems to make a way for a top-quality and cost-effective product; Ensuring high image and video quality and simple manageability for the end user through its custom-made app. This upgrade not only allowed us to improve the quality of service offered by our client but also created a new branch of their business to sell the new product.",
+        },
+      ],
+      images: [
+        {
+          image: Image2,
+          imageDescription: "",
+          style: {
+            position: "absolute",
+            top: "-15%",
+            left: "42%",
+            width: "18vw",
+          },
         },
         {
-          content:
-            "The challenge for us – apart from using Blender in this kind of big production for the first time, which was pretty exciting – was to offer to our movie director a very flexible previz environment so that he and the artists could concentrate on the quality and unleash their creativity.",
+          image: Image1,
+          imageDescription: "",
+          style: {
+            position: "absolute",
+            top: "12%",
+            left: "25%",
+            width: "15vw",
+            zIndex: 1,
+          },
         },
       ],
     },
     {
-      heading: "Workflow and tools",
+      heading: "SBX provided:",
+      headingColor: "#1250E2",
       body: [
         {
-          content:
-            "<b>Sr. Tools TD, Head of UX:</b> I was in charge of the graphic workflow and to do so I took inspiration in my experience of live action filmmaking and stages. Thanks to our TD team we designed and developed several tools that quickly became the backbone of our pipeline. Good news is several of these tools will be released soon to the community!!!",
-        },
-        {
-          content:
-            "<b>Stamp Info</b><br/>As you know in production it is mandatory to keep track of the context and origin of every rendered image in order to closely follow the advancement of the project. Blender already has a feature to write metadata on pictures but we needed more flexibility and additional information, such as the frame index of the image in various time systems (3D, edit…). We also wanted to have a more customizable layout. I then started to write my first add-on for Blender 😊",
-          image: BlenderScreen1Image,
-          // imageRatio: 1,
-          imageDescription: "Cycles Render Engine",
-        },
-        {
-          content:
-            "I found the Python API very open and powerful. This allowed me to import Pillow, a common graphic library, to create an image with all the specified information, image that I could combine afterwards with the rendered picture thanks to a process based on the VSE and on the generation of a temporary scene. This got integrated pretty well in the pipeline, it can be used as a standalone tool or be called by script as it is the case with Shot Manager.",
-        },
-        {
-          content:
-            "However the add-on has an important limitation that we couldn’t overcome when in production. During a rendering script execution the whole UI of Blender is frozen and there is no easy way to display the rendered images, to update a progress bar nor to interrupt the process (in case the images appear invalid for example).",
-        },
-        {
-          content:
-            "<b>Animation, Modeling, VFX</b><br/><u>Modeling, Sculpt, UV</u> Blender’s comprehensive array of modeling tools make creating, transforming and editing your models a breeze.<br/><u>VFX</u> professionals say: “Probably the best tracker in the market”. Blender includes production ready camera and object tracking. Allowing you to import raw footage, track the footage, mask areas and see the camera movements live in your 3D scene. Eliminating the need to switch between programs.<br/><u>Animation & Rigging</u> Thanks to the high quality rigging and animation tools, Blender is being used for numerous short films, advertisements, TV series and feature films now.",
-          images: [
-            {
-              image: BlenderScreen2Image,
-              imageDescription: "Modeling, Sculpt, UV Screen",
-            },
-            {
-              image: BlenderScreen3Image,
-              imageDescription: "VFX Screen",
-            },
-            {
-              image: BlenderScreen4Image,
-              imageDescription: "Animation & Rigging Screen",
-            },
+          points: [
+            "A complete technological solution, from Back-End to Front-End.",
+            "Hardware manufacturing from prototype to the final product focused on achieving the first prototype as close to the final product as possible.",
+            "Reduced costs.",
+            "Improved end-user experience.",
           ],
-        },
-        {
-          content:
-            "<u>Story Art</u> Really! Drawing directly in a 3D viewport makes a lot of sense. It opens unsurpassed workflow freedom for story-boarders and 2D artists.<br/><u>Make it Your Own</u> Blender has a flexible Python controlled interface. Layout, colors, size and even fonts can be adjusted. Use hundreds of add-ons by the community or create your own using Blender’s accessible Python API.",
-          images: [
-            {
-              image: BlenderScreenImage,
-              imageDescription: "Story Art, Drawing 2D in 3D Screen",
-            },
-            {
-              image: BlenderScreen5Image,
-              imageDescription: "Accessible Python API",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      heading: "Adopting Blender in production",
-      body: [
-        {
-          content:
-            "Switching to another software is something critical, and many studios are afraid to discover something new and different, because it costs a lot of time and money. Blender is sometimes very different from other DCCs in its mindset and its workflow and as a result people often do not use it at its full potential.",
-        },
-        {
-          content:
-            "I then personally think that one element can be improved to help onboarding studios. We have so many tutorials by artists for artists (and it’s awesome!), and even in the Blender Cloud, you have a lot of resources about creation or how to use Blender as an artist. However there are almost no specific tutorials and examples about workflows and how it is used in studios, nor best practices regarding links and collections. These are topics Blender Cloud may propose.",
-        },
-      ],
-    },
-    {
-      heading: "Conclusion",
-      body: [
-        {
-          content:
-            "This production on Blender was a great experience for us. We were able to integrate the application into our in-house pipeline and connect it to the other applications quite easily thanks to the strength of the Python API. In spite of some features that would need some maturity we had the confirmation that Blender is production ready and comes with tools that can really push up our way of working in terms of creativity. ",
+          contentRight: (
+            <CompanyInfo
+              name="VT-CAM"
+              url=""
+              logo={
+                <img src={ExactLogo.src} alt="" style={{ maxWidth: "130px" }} />
+              }
+              info={[
+                { key: "Industry", value: "Sports" },
+                { key: "Location", value: " Chicago, IL" },
+              ]}
+            />
+          ),
         },
       ],
     },
   ];
 
   return (
-    <>
+    <Box>
       <NextSeo
-        title="Customer Story Overview"
-        description="Mercury Customer Story Overview Example Page"
+        title="Raina"
+        description="Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes."
       />
       <chakra.main
         sx={{
@@ -179,132 +140,142 @@ const CustomerStoryOverviewPage: React.FC = () => {
       >
         {/* ----------------------------- Hero ----------------------------- */}
         <HeroBlock
-          logo={<BlenderLogo h="48px" w="auto" />}
-          image={Office6}
-          company="Blender"
-          title="Everyone should be free to create 3D CG content with Blender free tools"
-          body="The Blender Foundation (2002) is an independent public benefit organization. Its spin-off corporation Blender Institute (2007) hosts the foundation’s offices and currently employs 24 people who work on the Blender software and creative projects to validate and test Blender in production environments."
-          bg={heroBG}
+          hideBg
+          logo={<img src={ExactLogo.src} style={{ maxWidth: "200px" }} />}
+          image={AppScreenshotHero}
+          company="Exact"
+          title="“Transforming young athletes through college exposure, training, and development guidance.”"
+          body="Exact Sports provides summer camp services for young athletes from different sports in the United States who wish to train like professionals and reach their full potential. Through technological solutions applied to sports, Exact Sports is the intersection of sports and science for athlete development."
           colorScheme={color}
         />
 
         {/* -------------------------- Testimonial ------------------------- */}
         <Box mb={10} mt={-32}>
           <Container maxW="container.xl">
-            <Flex
-              align="center"
-              direction={["column", "column", "column", "row"]}
-            >
-              {/* ----------------------- Testimonial ---------------------- */}
-              <TestimonialBlock
-                body="More animators who are not from 3D are choosing Blender as a ‘steppin-up’ tool not only because it is free software but because of Grease Pencil. This is an important factor for our decision"
-                author="Hiroyasu Kobayashi, Senior Animation Artist"
-                colorScheme={color}
-                bodyColor={accentColor}
-                authorColor={textMuted}
-              />
-
-              {/* ---------------------- Company Info ---------------------- */}
-              <CompanyInfo
-                name="Blender Foundation"
-                url="https://www.blender.org"
-                logo={<BlenderLogo />}
-                info={[
-                  { key: "Industry", value: "CGI Tech" },
-                  { key: "Location", value: "Amsterdam, NL" },
-                  { key: "Type", value: "3D Animation" },
-                ]}
-              />
-            </Flex>
-          </Container>
-        </Box>
-
-        {/* --------------------------- Contents --------------------------- */}
-        <Container maxW="container.xl">
-          {content.map((c, idx) => (
-            <Box fontSize="xl" maxW="auto" mb={[5, 10, 20, 20]} key={idx}>
-              <Heading as="h3" mb={8}>
-                {c.heading}
-              </Heading>
-              {c.body.map((b, i) => (
+            {content.map((c, idx) => {
+              const content_ = (c.body || []).map((b, i) => (
                 <Content
                   key={i}
                   color={useColorModeValue("current", "whiteAlpha.700")}
                   {...b}
                 />
-              ))}
-            </Box>
-          ))}
-        </Container>
+              ));
 
-        <Divider />
+              return (
+                <Box fontSize="xl" maxW="auto" mb={[5, 10, 20, 20]} key={idx}>
+                  <Heading as="h3" mb={6} color={c.headingColor}>
+                    {c.heading}
+                  </Heading>
+                  {c.images ? (
+                    <Flex>
+                      <Box>{content_}</Box>
+                      <Box position="relative" flex="1">
+                        {c.images.map(({ image, style }, i) => {
+                          return (
+                            <Box style={style}>
+                              <ImageLazyload
+                                key={i}
+                                rounded="md"
+                                image={image}
+                              />
+                            </Box>
+                          );
+                        })}
+                      </Box>
+                    </Flex>
+                  ) : (
+                    content_
+                  )}
+                </Box>
+              );
+            })}
+          </Container>
+        </Box>
+
+        {false && <Divider />}
 
         {/* ------------------------ Related Stories ----------------------- */}
-        <RelatedStoriesBlock
-          colorScheme={color}
-          title="Continue with Related Stories"
-          items={[
-            {
-              href: "#",
-              logo: <Logo1 color={useColorModeValue(null, "whiteAlpha.800")} />,
-              image: Office1,
-              company: "Company 1",
-              body: "Company est omnis divisa in partes tres, quarum. At nos hinc posthac, sitientis piros Afros.",
-            },
-            {
-              href: "#",
-              logo: <Logo2 color={useColorModeValue(null, "whiteAlpha.800")} />,
-              image: Office2,
-              company: "Company 2",
-              body: "Company Cras mattis iudicium purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.",
-            },
-            {
-              href: "#",
-              logo: <Logo5 color={useColorModeValue(null, "whiteAlpha.800")} />,
-              image: Office3,
-              company: "Company 3",
-              body: "Company sociis natoque penatibus et magnis dis parturient. Hi omnes lingua, institutis, legibus inter se differunt.",
-            },
-          ]}
-        />
+        {false && (
+          <RelatedStoriesBlock
+            colorScheme={color}
+            title="Continue with Related Stories"
+            items={[
+              {
+                href: "#",
+                logo: (
+                  <Logo1 color={useColorModeValue(null, "whiteAlpha.800")} />
+                ),
+                image: Office1,
+                company: "Company 1",
+                body: "Company est omnis divisa in partes tres, quarum. At nos hinc posthac, sitientis piros Afros.",
+              },
+              {
+                href: "#",
+                logo: (
+                  <Logo2 color={useColorModeValue(null, "whiteAlpha.800")} />
+                ),
+                image: Office2,
+                company: "Company 2",
+                body: "Company Cras mattis iudicium purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor.",
+              },
+              {
+                href: "#",
+                logo: (
+                  <Logo5 color={useColorModeValue(null, "whiteAlpha.800")} />
+                ),
+                image: Office3,
+                company: "Company 3",
+                body: "Company sociis natoque penatibus et magnis dis parturient. Hi omnes lingua, institutis, legibus inter se differunt.",
+              },
+            ]}
+          />
+        )}
 
         {/* ------------------------------ CTA ----------------------------- */}
-        <CTABlock
-          colorScheme={color}
-          title={
-            <>
-              <Text
-                as="span"
-                fontSize={["1em", "1em", "1.5em"]}
-                display={["inline", "inline", "block"]}
-              >
-                Questions?
-              </Text>{" "}
-              <Text as="span" display={["inline", "inline", "block"]}>
-                We will guide you.
-              </Text>
-            </>
-          }
-          body="Ask about Themebiotic products, pricing, implementation, or anything else. Our highly trained representatives are ready to help."
-          button={
-            <Wrap flex="1" spacing={5} justify="center" align="center">
-              <WrapItem>
-                <Button size="lg" colorScheme={color} textTransform="uppercase">
-                  <Text fontSize="sm" fontWeight="700" as="span">
-                    Contact Us
-                  </Text>
-                </Button>
-              </WrapItem>
-              <WrapItem>
-                <Button whiteSpace="pre-wrap" variant="link">
-                  OR CALL 00800 1234 5678 (FREEPHONE)
-                </Button>
-              </WrapItem>
-            </Wrap>
-          }
-        />
+        {false && (
+          <CTABlock
+            colorScheme={color}
+            title={
+              <>
+                <Text
+                  as="span"
+                  fontSize={["1em", "1em", "1.5em"]}
+                  display={["inline", "inline", "block"]}
+                >
+                  Questions?
+                </Text>{" "}
+                <Text as="span" display={["inline", "inline", "block"]}>
+                  We will guide you.
+                </Text>
+              </>
+            }
+            body="Ask about Themebiotic products, pricing, implementation, or anything else. Our highly trained representatives are ready to help."
+            button={
+              <Wrap flex="1" spacing={5} justify="center" align="center">
+                <WrapItem>
+                  <Button
+                    size="lg"
+                    colorScheme={color}
+                    textTransform="uppercase"
+                  >
+                    <Text fontSize="sm" fontWeight="700" as="span">
+                      Contact Us
+                    </Text>
+                  </Button>
+                </WrapItem>
+                <WrapItem>
+                  <Button whiteSpace="pre-wrap" variant="link">
+                    OR CALL 00800 1234 5678 (FREEPHONE)
+                  </Button>
+                </WrapItem>
+              </Wrap>
+            }
+          />
+        )}
+
+        <PartnershipWithGbx mt="12" mb="16" />
       </chakra.main>
-    </>
+    </Box>
   );
 };
 
@@ -321,44 +292,49 @@ const HeroBlock: React.FC<
     company: string;
     title: string;
     body: string;
+    hideBg?: boolean;
   } & ChakraProps &
     ThemingProps
-> = memo(({ logo, title, body, company, image, colorScheme, ...rest }) => {
-  return (
-    <Box pb={48} zIndex={-1} overflow="hidden" pos="relative" {...rest}>
-      <Container pt={[28]} maxW="container.xl">
-        <Stack
-          align="center"
-          spacing={[5, 5, 10, 20]}
-          direction={["column", "column", "row", "row"]}
-        >
-          <Box w="full" flex="1">
-            <VStack align="start" spacing={6}>
-              {logo}
-              {title && <Heading>{title}</Heading>}
-              {body && <Text fontSize="lg">{body}</Text>}
-            </VStack>
-          </Box>
-
-          <Flex w="full" flex="1">
-            <Box shadow="2xl" flex="1">
-              {image && (
-                <ImageLazyload rounded="md" alt={company} image={image} />
-              )}
+> = memo(
+  ({ logo, title, body, company, image, colorScheme, hideBg, ...rest }) => {
+    return (
+      <Box pb={48} zIndex={-1} overflow="hidden" pos="relative" {...rest}>
+        <Container pt={[28]} maxW="container.xl">
+          <Stack
+            align="center"
+            spacing={[5, 5, 10, 20]}
+            direction={["column", "column", "row", "row"]}
+          >
+            <Box w="full" flex="1">
+              <VStack align="start" spacing={6}>
+                {logo}
+                {title && <Heading>{title}</Heading>}
+                {body && <Text fontSize="lg">{body}</Text>}
+              </VStack>
             </Box>
-          </Flex>
-        </Stack>
-      </Container>
-      <TornadoBackground
-        colorScheme={colorScheme}
-        top="0"
-        pos="absolute"
-        zIndex={-1}
-      />
-      <DividerTilt height="150px" position="bottom" />
-    </Box>
-  );
-});
+
+            <Flex w="full" flex="1">
+              <Box shadow="2xl" flex="1">
+                {image && (
+                  <ImageLazyload rounded="md" alt={company} image={image} />
+                )}
+              </Box>
+            </Flex>
+          </Stack>
+        </Container>
+        {!hideBg && (
+          <TornadoBackground
+            colorScheme={colorScheme}
+            top="0"
+            pos="absolute"
+            zIndex={-1}
+          />
+        )}
+        <DividerTilt height="150px" position="bottom" />
+      </Box>
+    );
+  },
+);
 
 if (__DEV__) {
   HeroBlock.displayName = "HeroBlock";
@@ -420,26 +396,26 @@ const CompanyInfo: React.FC<
   return (
     <Box
       flex="1"
-      p={10}
+      p={8}
       mt={[10, 10, 10, 0]}
       bg={useColorModeValue("whiteAlpha.800", "blackAlpha.600")}
       shadow="xl"
       rounded="md"
       ml={["unset", "unset", "unset", "auto"]}
-      maxW={["full", "full", "auto", "300px"]}
+      maxW={["full", "full", "auto", "364px"]}
       {...rest}
     >
       {logo}
       <Box mt={2} color={textMuted}>
-        <List>
+        <List color="#000">
           <ListItem>
-            <Link d="flex" alignItems="center" href={url} isExternal>
-              {name} <ExternalLinkIcon ml="2" />
+            <Link d="flex" alignItems="center" href={url}>
+              {name}
             </Link>
           </ListItem>
           {info.map((i, idx) => (
             <ListItem key={idx}>
-              <Flex>
+              <Flex fontSize="xl">
                 <Text mr={1} fontWeight="bold">
                   {i.key}:
                 </Text>
@@ -447,6 +423,14 @@ const CompanyInfo: React.FC<
               </Flex>
             </ListItem>
           ))}
+
+          {!!url && (
+            <ListItem fontSize="xl" mt={6}>
+              <Link d="flex" alignItems="center" href={url} isExternal>
+                Visit Website
+              </Link>
+            </ListItem>
+          )}
         </List>
       </Box>
     </Box>
@@ -461,20 +445,25 @@ if (__DEV__) {
 
 type T_Content = {
   heading?: string;
+  headingColor?: string;
   body: T_ContentBody[];
+  images?: T_ContentBodyImages[];
 };
 
 type T_ContentBody = {
-  content: string;
+  content?: string;
+  points?: string[];
   image?: imageObject;
   imageDescription?: string;
   imageRatio?: number;
   images?: T_ContentBodyImages[];
+  contentRight?: React.ReactNode;
 };
 
 type T_ContentBodyImages = {
   image: imageObject;
   imageDescription: string;
+  style?: React.CSSProperties;
 };
 
 const Content: React.FC<T_ContentBody & ChakraProps> = memo(
@@ -485,40 +474,70 @@ const Content: React.FC<T_ContentBody & ChakraProps> = memo(
     imageDescription,
     imageRatio,
     color,
+    points,
+    contentRight,
     ...rest
   }) => {
     const textMuted = useColorModeValue("gray.500", "gray.500");
     return (
       <Box {...rest}>
-        <Box fontSize="xl" maxW="700px" mb={4}>
-          <Text color={color} dangerouslySetInnerHTML={{ __html: content }} />
-        </Box>
-        {image && (
-          <Box maxW="1000px" mt={10} mb={imageDescription ? 6 : 10}>
-            <ImageLazyload rounded="md" ratio={imageRatio} image={image} />
-            {imageDescription && (
+        <Flex
+          justify="space-between"
+          direction={["column", "column", "column", "row"]}
+        >
+          <Box fontSize="xl" maxW="700px" mb={4}>
+            <Box fontSize="xl" maxW="700px" mb={4}>
               <Text
-                textAlign={["center", "center", "end"]}
-                color={textMuted}
-                mt={2}
-                fontSize="sm"
-              >
-                {imageDescription}
-              </Text>
+                color={color}
+                dangerouslySetInnerHTML={{ __html: content }}
+              />
+            </Box>
+            {!!points && (
+              <ul style={{ paddingLeft: "22px" }}>
+                {points.map((p, i) => {
+                  return <li key={i}>{p}</li>;
+                })}
+              </ul>
             )}
           </Box>
-        )}
-        {images && (
-          <Stack
-            spacing={[5, 5, 10]}
-            my={10}
-            direction={["column", "column", "row", "row"]}
-          >
-            {images.map((i, idx) => (
-              <ContentImages color={textMuted} key={idx} {...i} />
-            ))}
-          </Stack>
-        )}
+
+          <Box flex="1">
+            {contentRight || (
+              <>
+                {image && (
+                  <Box maxW="1000px" mt={10} mb={imageDescription ? 6 : 10}>
+                    <ImageLazyload
+                      rounded="md"
+                      ratio={imageRatio}
+                      image={image}
+                    />
+                    {imageDescription && (
+                      <Text
+                        textAlign={["center", "center", "end"]}
+                        color={textMuted}
+                        mt={2}
+                        fontSize="sm"
+                      >
+                        {imageDescription}
+                      </Text>
+                    )}
+                  </Box>
+                )}
+                {images && (
+                  <Stack
+                    spacing={[5, 5, 10]}
+                    my={10}
+                    direction={["column", "column", "row", "row"]}
+                  >
+                    {images.map((i, idx) => (
+                      <ContentImages color={textMuted} key={idx} {...i} />
+                    ))}
+                  </Stack>
+                )}
+              </>
+            )}
+          </Box>
+        </Flex>
       </Box>
     );
   },

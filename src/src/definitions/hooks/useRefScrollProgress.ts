@@ -27,16 +27,19 @@ export function useRefScrollProgress<T extends HTMLElement | null>(
       const rect = ref.current.getBoundingClientRect();
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
-      const offsetTop = rect.top + scrollTop - windowH + offset;
-      setOffsetTop(offsetTop);
+      const offsetTopNew = rect.top + scrollTop - windowH + offset;
+
+      if (offsetTop !== offsetTopNew) {
+        setOffsetTop(offsetTopNew);
+      }
 
       // Type 1
       // const startPosition = (offsetTop - windowH) / (bodyH - windowH);
       // const endPosition = (offsetTop - windowH + rect.height) / (bodyH - windowH);
 
       // Type 2
-      const startPosition = offsetTop / bodyH;
-      const endPosition = (offsetTop + rect.height) / (bodyH - windowH);
+      const startPosition = offsetTopNew / bodyH;
+      const endPosition = (offsetTopNew + rect.height) / (bodyH - windowH);
 
       setStart(startPosition);
       setEnd(endPosition);
