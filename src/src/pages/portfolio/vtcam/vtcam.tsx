@@ -123,8 +123,8 @@ const CustomerStoryOverviewPage: React.FC = () => {
   return (
     <Box>
       <NextSeo
-        title="Raina"
-        description="Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes."
+        title="VTCAM"
+        description="A high-resolution camera system taking sports Bootcamps experiences to the next level."
       />
       <chakra.main
         sx={{

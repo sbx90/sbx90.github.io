@@ -23,7 +23,7 @@ const FooterLargeNavigationAppstore: React.FC<ChakraProps> = (props) => {
         <SimpleGrid columns={[1, 2, 3]} spacing={8}>
           {[Company, Address, BusinessEnquiries].map((i, index) => {
             return (
-              <Stack key={index} align={"flex-start"}>
+              <Stack key={index} align={"flex-start"} textTransform="uppercase">
                 <ListHeader>{i.title}</ListHeader>
                 {i.items.map((link, idx) => (
                   <Link
