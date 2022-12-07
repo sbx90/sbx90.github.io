@@ -1,6 +1,6 @@
 import useScreenType from "@root/src/hooks/useScreenType";
 
-import React from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 import {
   Box,
@@ -38,6 +38,29 @@ const FeatureTile: React.FC<{ image: string; altText: string }> = ({
 
 const AboutSection: React.FC = () => {
   const { isScreenSmallerThanTablet } = useScreenType();
+  const videoElRef = useRef<HTMLVideoElement>();
+
+  const setupIntersectionObserver = useCallback(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElRef.current.play();
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 1.0,
+      },
+    );
+
+    observer.observe(videoElRef.current);
+  }, []);
+
+  useEffect(() => {
+    setupIntersectionObserver();
+  }, [setupIntersectionObserver]);
 
   return (
     <Box width="full" id={SECTION_ID.ABOUT_SECTION}>
@@ -89,7 +112,15 @@ const AboutSection: React.FC = () => {
           something great.
         </Text>
 
-        <Box height={430} background="#999" mt="24"></Box>
+        <Box mt="16">
+          <video
+            loop
+            muted
+            ref={videoElRef}
+            src="/videos/about_sbx.mp4"
+            style={{ width: "100%", margin: "0 auto" }}
+          />
+        </Box>
 
         {false && (
           <>
