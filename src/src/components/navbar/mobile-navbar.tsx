@@ -27,13 +27,16 @@ import {
   MobileMenuActions,
   MobileMenuCtx,
 } from "@definitions/context/mobile.menu";
-import { main } from "@definitions/navigation/main";
+import { main, SECTION_ID } from "@definitions/navigation/main";
 import { __DEV__ } from "@definitions/utils";
+
+import { useContactUsModal } from "@blocks/contact-us-modal";
 
 import MenuItemTag from "./menu-item-tag";
 import { INavbar } from "./navbar";
 
 const MobileNavbar: React.FC = () => {
+  const { onOpen } = useContactUsModal();
   const router = useRouter();
   const { state, dispatch } = useContext(MobileMenuCtx);
   const toggleHandler = useCallback(() => {
@@ -69,9 +72,22 @@ const MobileNavbar: React.FC = () => {
 
         <DrawerBody>
           <Stack mt={10} w="full" spacing={2}>
-            {main.map((link, index) => (
-              <MobileNavItem key={index} {...link} />
-            ))}
+            {main.map((link, index) => {
+              if (link.id === SECTION_ID.CONTACT_US_SECTION) {
+                return (
+                  <MobileNavItem
+                    key={index}
+                    {...link}
+                    onClick={() => {
+                      onOpen();
+                    }}
+                    href={""}
+                  />
+                );
+              }
+
+              return <MobileNavItem key={index} {...link} />;
+            })}
           </Stack>
         </DrawerBody>
       </DrawerContent>
@@ -85,18 +101,26 @@ if (__DEV__) {
 
 const MobileNavItem: React.FC<INavbar.IItem> = memo(
   ({ title, subitems, href }) => {
+    if (href) {
+      return (
+        <>
+          {subitems ? (
+            <MobileNavSubitems href={href} title={title} subitems={subitems} />
+          ) : (
+            <NextLink href={href} passHref>
+              <Button justifyContent="start" isFullWidth variant="ghost">
+                {title}
+              </Button>
+            </NextLink>
+          )}
+        </>
+      );
+    }
+
     return (
-      <>
-        {subitems ? (
-          <MobileNavSubitems href={href} title={title} subitems={subitems} />
-        ) : (
-          <NextLink href={href} passHref>
-            <Button justifyContent="start" isFullWidth variant="ghost">
-              {title}
-            </Button>
-          </NextLink>
-        )}
-      </>
+      <Button justifyContent="start" isFullWidth variant="ghost">
+        {title}
+      </Button>
     );
   },
 );

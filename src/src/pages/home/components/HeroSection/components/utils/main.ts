@@ -2,8 +2,6 @@ import { Globe, Point3D } from "../classes";
 
 const Hammer = () => import("hammerjs");
 
-const MOBILE_SCREEN_WIDTH_THRESHOLD = 768; //Standard table width
-
 export function init(
   canvas: HTMLCanvasElement,
   setting: {

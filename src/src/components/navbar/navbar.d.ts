@@ -17,11 +17,13 @@ declare namespace INavbar {
   }
 
   export interface IItem extends ChakraProps, ThemingProps {
+    id?: string;
     title: string;
-    href: string | UrlObject;
+    href?: string | UrlObject;
     description?: string;
     icon?: IconType;
     subitems?: IItem[];
+    onClick?: () => void;
   }
 
   // interface I_Item {

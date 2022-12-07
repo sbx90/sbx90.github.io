@@ -24,13 +24,15 @@ import {
   MobileMenuProvider,
   MobileMenuCtx,
 } from "@definitions/context/mobile.menu";
-import { main } from "@definitions/navigation/main";
+import { main, SECTION_ID } from "@definitions/navigation/main";
 import { __DEV__ } from "@definitions/utils";
 import customScrollbar from "@definitions/utils/scrollbar";
 
 import HamburgerIcon from "@components/hamburger-icon";
 import { LogoWithSiteName } from "@components/logo/logo-with-site-name-interactive";
 import ThemeSwitch from "@components/theme-switch";
+
+import { useContactUsModal } from "@blocks/contact-us-modal";
 
 import MenuItemTag from "./menu-item-tag";
 import MobileNavbar from "./mobile-navbar";
@@ -87,6 +89,7 @@ if (__DEV__) {
 
 const AllMenu = memo(
   ({ isDark, items }: { isDark?: boolean; items: INavbar.IItem[] }) => {
+    const { onOpen } = useContactUsModal();
     const buttonStyle = {
       color: isDark ? "whiteAlpha.900" : "inherit",
       _hover: {
@@ -130,6 +133,18 @@ const AllMenu = memo(
                 })}
               </MenuList>
             </Menu>
+          ) : item.id === SECTION_ID.CONTACT_US_SECTION ? (
+            <Button
+              variant="ghost"
+              fontSize="xl"
+              {...buttonStyle}
+              onClick={() => {
+                onOpen();
+              }}
+            >
+              {item.title}
+              <MenuItemTag title={item.title} />
+            </Button>
           ) : (
             <NextLink key={index} href={item.href} passHref>
               <Button variant="ghost" fontSize="xl" {...buttonStyle}>

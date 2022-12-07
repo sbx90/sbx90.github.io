@@ -18,7 +18,7 @@ import {
 
 const FooterLargeNavigationAppstore: React.FC<ChakraProps> = (props) => {
   return (
-    <Box bg="#B9B9B9" color="#000000" {...props}>
+    <Box bg="#C8C8D1" color="#000000" {...props}>
       <Container as={Stack} maxW={"container.lg"} py={10}>
         <SimpleGrid columns={[1, 2, 3]} spacing={8}>
           {[Company, Address, BusinessEnquiries].map((i, index) => {
@@ -30,8 +30,8 @@ const FooterLargeNavigationAppstore: React.FC<ChakraProps> = (props) => {
                     key={idx}
                     href={link.href}
                     color="#000"
-                    fontWeight="300"
-                    fontSize={["18px", "18px", "21px"]}
+                    fontWeight="100"
+                    fontSize={["18px", "18px", "20px", "20px"]}
                   >
                     {link.title}
                   </Link>

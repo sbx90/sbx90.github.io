@@ -7,20 +7,24 @@ export enum SECTION_ID {
 
 export const main = [
   {
+    id: SECTION_ID.ABOUT_SECTION,
     title: "About us",
     href: `/about`,
   },
   {
+    id: SECTION_ID.OUR_SERVICES_SECTION,
     title: "Our services",
-    href: `#${SECTION_ID.OUR_SERVICES_SECTION}`,
+    href: `/#${SECTION_ID.OUR_SERVICES_SECTION}`,
   },
   {
+    id: SECTION_ID.CLIENTS_SECTION,
     title: "Clients",
-    href: `#${SECTION_ID.CLIENTS_SECTION}`,
+    href: `/#${SECTION_ID.CLIENTS_SECTION}`,
   },
   {
+    id: SECTION_ID.CONTACT_US_SECTION,
     title: "Contact us",
-    href: `#${SECTION_ID.CONTACT_US_SECTION}`,
+    href: `/#${SECTION_ID.CONTACT_US_SECTION}`,
   },
 ];
 
