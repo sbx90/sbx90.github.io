@@ -32,7 +32,7 @@
   "..\\src\\layouts\\default.tsx -> @components/footer/footer-large-navigation-appstore": {
     "id": 5881,
     "files": [
-      "static/chunks/881.457433ef143c112d.js"
+      "static/chunks/881.af6effb53ec1c1fb.js"
     ]
   },
   "..\\src\\layouts\\default.tsx -> @components/header": {
@@ -40,7 +40,7 @@
     "files": [
       "static/chunks/876-f6f5ea73c85594a7.js",
       "static/chunks/799.81c5f6b7fdad1e83.js",
-      "static/chunks/252.1f25c780809f099c.js"
+      "static/chunks/252.183512fa41248461.js"
     ]
   },
   "..\\src\\pages\\home\\components\\HeroSection\\components\\utils\\main.ts -> hammerjs": {
