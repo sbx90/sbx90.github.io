@@ -97,8 +97,8 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
               border="1px solid A9A9A9"
               size="28"
               fontSize={isScreenSmallerThanTablet ? "24px" : "28px"}
-              px="6"
-              py="6"
+              px="3"
+              py="3"
               fontWeight="500"
               boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
             >

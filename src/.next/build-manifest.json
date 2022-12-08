@@ -5,13 +5,13 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/xs9bb9ysdOk3nYD5fWfrX/_buildManifest.js",
-    "static/xs9bb9ysdOk3nYD5fWfrX/_ssgManifest.js",
-    "static/xs9bb9ysdOk3nYD5fWfrX/_middlewareManifest.js"
+    "static/Tmml8K50HtlwuxlmdHZzc/_buildManifest.js",
+    "static/Tmml8K50HtlwuxlmdHZzc/_ssgManifest.js",
+    "static/Tmml8K50HtlwuxlmdHZzc/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/chunks/58a3678d-10e6445d5bfa0734.js",
@@ -19,37 +19,37 @@
       "static/chunks/876-f6f5ea73c85594a7.js",
       "static/chunks/23-692c2ace436854a8.js",
       "static/css/738e8f61204d6bba.css",
-      "static/chunks/pages/index-a9afc2c0b92eb7dd.js"
+      "static/chunks/pages/index-d0e7a3c9786348f3.js"
     ],
     "/_app": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/css/4b46710e46a22cbc.css",
       "static/chunks/pages/_app-5f7657a216711078.js"
     ],
     "/_error": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/chunks/pages/_error-350d9d86556f6d87.js"
     ],
     "/about": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
-      "static/chunks/pages/about-b18d2c08994ba9ed.js"
+      "static/chunks/pages/about-6ad1b98ffd2e3782.js"
     ],
     "/portfolio/raina": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/chunks/354-92965a64063404a2.js",
       "static/chunks/193-3c228759da8048f4.js",
-      "static/chunks/pages/portfolio/raina-b81665d227133ef0.js"
+      "static/chunks/pages/portfolio/raina-8f5c597d14044e38.js"
     ],
     "/portfolio/tag": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/chunks/354-92965a64063404a2.js",
@@ -58,7 +58,7 @@
       "static/chunks/pages/portfolio/tag-6ca61f6a9a2e9def.js"
     ],
     "/portfolio/vt-cam": [
-      "static/chunks/webpack-68abdc1677c4fb05.js",
+      "static/chunks/webpack-d3b2193c8526081b.js",
       "static/chunks/framework-5f4595e5518b5600.js",
       "static/chunks/main-b442b45902648bd0.js",
       "static/chunks/354-92965a64063404a2.js",

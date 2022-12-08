@@ -16,40 +16,40 @@ const RAINA_SCREENSHOTS_DATA = [
   //   image: RainaScreenshot3.src,
   //   style: { top: "9%", left: "57%", width: "38%" },
   // },
+  // {
+  //   image: RainaScreenshot4.src,
+  //   style: { top: "56%", left: "8%", width: "43%" },
+  // },
   {
-    image: RainaScreenshot4.src,
-    style: { top: "56%", left: "8%", width: "43%" },
+    image: RainaScreenshot5.src,
+    style: {
+      bottom: "10%",
+      left: "36%",
+      width: "240px",
+      height: "380px",
+      "object-fit": "contain",
+    },
   },
   {
     image: RainaScreenshot2.src,
     style: {
-      top: "58%",
+      bottom: "10%",
       left: "calc(48% + 3rem)",
-      width: "218px",
-      height: "396px",
+      width: "280px",
+      height: "420px",
       "object-fit": "contain",
     },
   },
-  {
-    image: RainaScreenshot1.src,
-    style: {
-      top: "58%",
-      left: "calc(48% + 206px + 3rem)",
-      width: "218px",
-      height: "396px",
-      "object-fit": "contain",
-    },
-  },
-  {
-    image: RainaScreenshot5.src,
-    style: {
-      top: "54%",
-      left: "calc(40% + 3rem + 504px)",
-      width: "310px",
-      height: "470px",
-      "object-fit": "contain",
-    },
-  },
+  // {
+  //   image: RainaScreenshot1.src,
+  //   style: {
+  //     top: "58%",
+  //     left: "calc(48% + 206px + 3rem)",
+  //     width: "218px",
+  //     height: "396px",
+  //     "object-fit": "contain",
+  //   },
+  // },
 ];
 
 const StyledScreenshot = styled.img`

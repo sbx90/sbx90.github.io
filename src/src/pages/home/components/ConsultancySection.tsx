@@ -24,7 +24,7 @@ const ConsultancySection: React.FC = () => {
   const { isScreenSmallerThanTablet } = useScreenType();
 
   return (
-    <Box width="full" position="relative" background="#ECF2F8">
+    <Box width="full" position="relative" background="#969696">
       {false && <FuildAnimatedDisplay />}
 
       <Container maxW="container.xl">

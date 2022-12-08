@@ -18,7 +18,7 @@ import {
 
 const FooterLargeNavigationAppstore: React.FC<ChakraProps> = (props) => {
   return (
-    <Box bg="#C8C8D1" color="#000000" {...props}>
+    <Box bg="#969696" color="#000000" {...props}>
       <Container as={Stack} maxW={"container.lg"} py={10}>
         <SimpleGrid columns={[1, 2, 3]} spacing={8}>
           {[Company, Address, BusinessEnquiries].map((i, index) => {

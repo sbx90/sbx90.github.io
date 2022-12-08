@@ -76,7 +76,7 @@ const OurExperienceSection: React.FC<IOurExperienceSection> = (props) => {
           gap="8"
           mt="8"
         >
-          <Box width="full" rounded="md" background="#F6F8FA" px="8" py="4">
+          <Box width="full" rounded="md" background="#969696" px="8" py="4">
             {EXPERIENCE_POINTS.map((item, i) => {
               return (
                 <Box key={i}>
