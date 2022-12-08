@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
@@ -32,7 +32,22 @@ const TextScrollAnimator: React.FC<{
   height?: string;
   style?: React.CSSProperties;
 }> = ({ className, itemList = [], height = "38px", style }) => {
+  const [rerendered, setRerendered] = useState(false);
+
+  useEffect(() => {
+    if (!rerendered) {
+      setTimeout(() => {
+        setRerendered(true);
+      }, 100);
+    }
+  }, [rerendered]);
+
   if (!itemList.length) return null;
+
+  console.log("ASASASDASD", {
+    getSlideAnitmationString: getSlideAnitmationString(itemList.length, height),
+    height,
+  });
 
   return (
     <StyledContainer

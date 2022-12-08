@@ -7,15 +7,14 @@ export function getSlideAnitmationString(
     .map((_, i) => i)
     .concat(itemCount)
     .reverse()
-    .map((_, i) => {
-      const n = i + 1;
+    .map((n, i) => {
       const p1 = ((i - 1) * 100) / (itemCount || 1) + 3;
       const p1Rounded = Math.round(p1 * 100) / 100;
 
       const p2 = (i * 100) / (itemCount || 1);
       const p2Rounded = Math.round(p2 * 100) / 100;
 
-      const marginTop = `calc(${n} * ${height})`;
+      const marginTop = `calc(-1 * ${n} * ${height})`;
 
       const s: string =
         i === 0

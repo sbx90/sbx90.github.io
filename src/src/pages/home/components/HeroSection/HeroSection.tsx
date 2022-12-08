@@ -22,6 +22,8 @@ import { Point3D } from "./components/classes";
 const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
   const { isScreenSmallerThanTablet } = useScreenType();
 
+  console.log("ASASASDASD", { isScreenSmallerThanTablet });
+
   return (
     <Box w="full" position="relative" overflow="hidden">
       <CanvasDisplay
@@ -45,8 +47,8 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
         maxW={2200}
         minH={685}
         maxH={825}
-        pointerEvents="none"
-        userSelect="none"
+        // pointerEvents="none"
+        // userSelect="none"
         {...props}
       >
         <Container
@@ -72,12 +74,11 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
             >
               We&nbsp;
               <TextScrollAnimator
-                height={isScreenSmallerThanTablet ? "28px" : "83px"}
+                height={isScreenSmallerThanTablet ? "32px" : "83px"}
                 itemList={["think", "develop", "create"]}
                 style={{
                   position: "relative",
-                  // bottom: isScreenSmallerThanTablet ? "-5px" : "-19px",
-                  bottom: isScreenSmallerThanTablet ? "0" : "-19px",
+                  bottom: isScreenSmallerThanTablet ? "-7px" : "-19px",
                   textAlign: "left",
                   color: "#1250E2",
                 }}
