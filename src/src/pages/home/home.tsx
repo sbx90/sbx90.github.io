@@ -122,9 +122,9 @@ const Homepage = (): JSX.Element => {
 
           <OurExperienceSection />
 
-          <CapabilitiesSection />
-
           <Box width="full" overflow="hidden">
+            <CapabilitiesSection />
+
             <ConsultancySection />
 
             {false && <PorfolioSection />}

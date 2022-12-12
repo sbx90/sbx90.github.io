@@ -42,12 +42,7 @@ const CapabilitiesSection: React.FC = () => {
 
         <Heading>Our Capabitilies</Heading>
 
-        <Flex
-          direction="column"
-          alignItems="center"
-          pt={["50px", "50px", "50px", "50px"]}
-          marginTop="12"
-        >
+        <Flex direction="column" alignItems="center" pt="20px">
           <Container py={0} maxWidth="container.xl">
             <FeaturesListVertical
               showContentFirst={!isScreenSmallerThanTablet}
@@ -59,12 +54,7 @@ const CapabilitiesSection: React.FC = () => {
           </Container>
         </Flex>
 
-        <Flex
-          direction="column"
-          alignItems="center"
-          pb={[16, 16, 0, 0, 0]}
-          marginTop="8"
-        >
+        <Flex direction="column" alignItems="center" mt={[0, 0, 0, "-40"]}>
           <Container py={0} maxWidth="container.xl">
             <AppFeatures
               title="FrontEnd Development"
@@ -77,11 +67,7 @@ const CapabilitiesSection: React.FC = () => {
           </Container>
         </Flex>
 
-        <Container
-          pt={["50px", "50px", "50px", "50px"]}
-          maxWidth="container.xl"
-          marginTop="16"
-        >
+        <Container maxWidth="container.xl">
           <FeaturesListVertical
             showContentFirst={!isScreenSmallerThanTablet}
             title="Web & Mobile Apps"
@@ -94,12 +80,7 @@ const CapabilitiesSection: React.FC = () => {
           />
         </Container>
 
-        <Flex
-          direction="column"
-          alignItems="center"
-          pb={[16, 16, 0, 0, 0]}
-          marginTop="8"
-        >
+        <Flex direction="column" alignItems="center" pb={[16, 16, 0, 0, 0]}>
           <Container py={0} maxWidth="container.xl">
             <AppFeatures
               title="Branding & Design"

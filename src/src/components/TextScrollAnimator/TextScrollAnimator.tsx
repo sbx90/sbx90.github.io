@@ -44,11 +44,6 @@ const TextScrollAnimator: React.FC<{
 
   if (!itemList.length) return null;
 
-  console.log("ASASASDASD", {
-    getSlideAnitmationString: getSlideAnitmationString(itemList.length, height),
-    height,
-  });
-
   return (
     <StyledContainer
       className={className}

@@ -1,3 +1,5 @@
+import useScreenType from "@root/src/hooks/useScreenType";
+
 import styled from "styled-components";
 
 import ImageComparisonSlider from "@components/image-comparison-slider";
@@ -25,6 +27,8 @@ const StyledScreenshot = styled.img`
 `;
 
 const Vtcam: React.FC = (): JSX.Element => {
+  const { isScreenSmallerThanTablet } = useScreenType();
+
   return (
     <ProjectDisplay
       logo={ExactLogo.src}
@@ -43,18 +47,23 @@ const Vtcam: React.FC = (): JSX.Element => {
           src: VtcamLoginDark.src,
         }}
         position="absolute"
-        top="20%"
-        left="68%"
-        width="16%"
+        top={isScreenSmallerThanTablet ? "50%" : "20%"}
+        left={isScreenSmallerThanTablet ? "50%" : "68%"}
+        width={isScreenSmallerThanTablet ? "40%" : "16%"}
+        transform={isScreenSmallerThanTablet ? "translateX(-50%)" : ""}
         rounded="2xl"
         overflow="hidden"
         border="2px solid #000"
         boxShadow="0 0 1px 1px #ffffff6d, 0 0 4px 4px #000"
         background="#000"
       />
-      {VTCAM_SCREENSHOTS_DATA.map((s, i) => {
-        return <StyledScreenshot key={i} src={s.image} style={s.style || {}} />;
-      })}
+
+      {!isScreenSmallerThanTablet &&
+        VTCAM_SCREENSHOTS_DATA.map((s, i) => {
+          return (
+            <StyledScreenshot key={i} src={s.image} style={s.style || {}} />
+          );
+        })}
     </ProjectDisplay>
   );
 };

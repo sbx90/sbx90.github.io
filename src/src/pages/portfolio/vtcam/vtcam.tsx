@@ -405,9 +405,11 @@ const CompanyInfo: React.FC<
       maxW={["full", "full", "auto", "364px"]}
       {...rest}
     >
-      {logo}
+      <Box filter={useColorModeValue("", "brightness(0) invert(1)")}>
+        {logo}
+      </Box>
       <Box mt={2} color={textMuted}>
-        <List color="#000">
+        <List color={useColorModeValue("black", "whiteAlpha.800")}>
           <ListItem>
             <Link d="flex" alignItems="center" href={url}>
               {name}

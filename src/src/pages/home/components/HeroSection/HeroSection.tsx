@@ -22,8 +22,6 @@ import { Point3D } from "./components/classes";
 const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
   const { isScreenSmallerThanTablet } = useScreenType();
 
-  console.log("ASASASDASD", { isScreenSmallerThanTablet });
-
   return (
     <Box w="full" position="relative" overflow="hidden">
       <CanvasDisplay

@@ -106,16 +106,18 @@ const ProjectDisplayPlain: React.FC<
               </Text>
 
               <NextLink href={projectPageUrl} passHref>
-                <Button
-                  bg={"blue.400"}
-                  color={"white"}
-                  _hover={{ bg: "blue.500" }}
-                  variant="solid"
-                  fontSize="xl"
-                  p="6"
-                >
-                  Read more
-                </Button>
+                <a target="_blank" rel="noopener noreferrer">
+                  <Button
+                    bg={"blue.400"}
+                    color={"white"}
+                    _hover={{ bg: "blue.500" }}
+                    variant="solid"
+                    fontSize="xl"
+                    p="6"
+                  >
+                    Read more
+                  </Button>
+                </a>
               </NextLink>
             </Box>
           </Container>
