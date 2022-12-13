@@ -1,0 +1,15 @@
+{
+  "section-heading": "What our clients have to say",
+  "testimony": {
+    "james": {
+      "content": "I see SBX as the perfect ally in software development. From the beginning idea to the final product we’ve felt completely guided and supported. We are excited to keep on working in future projects.",
+      "display-name": "James",
+      "title": "Executive Director"
+    },
+    "miguel": {
+      "content": "We developed a great partnership with SBX for the past two years and their dedication is evident in the upgrade of our company service.",
+      "display-name": "Miguel A.",
+      "title": "Project Manager"
+    }
+  }
+}

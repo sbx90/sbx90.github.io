@@ -2,6 +2,8 @@ import useScreenType from "@root/src/hooks/useScreenType";
 
 import React, { useCallback, useEffect, useRef } from "react";
 
+import { useTranslation } from "next-i18next";
+
 import {
   Box,
   createIcon,
@@ -37,6 +39,7 @@ const FeatureTile: React.FC<{ image: string; altText: string }> = ({
 };
 
 const AboutSection: React.FC = () => {
+  const { t } = useTranslation("home");
   const { isScreenSmallerThanTablet } = useScreenType();
   const videoElRef = useRef<HTMLVideoElement>();
 
@@ -68,7 +71,10 @@ const AboutSection: React.FC = () => {
         <Flex flexWrap={["wrap", "wrap", "wrap", "nowrap"]}>
           <VStack align="start" width="full" spacing={6}>
             <Heading>
-              The world of Software and APP Development can be complex
+              {t("about-section.title", {
+                defaultValue:
+                  "The world of Software and APP Development can be complex",
+              })}
             </Heading>
           </VStack>
 
@@ -92,24 +98,26 @@ const AboutSection: React.FC = () => {
               transform="rotate(335deg) scaleX(-1)"
             >
               <Text color={"#1250E2"} lineHeight="1" fontSize="40px">
-                we get it.
+                {t("about-section.arrow-text", {
+                  defaultValue: "we get it.",
+                })}
               </Text>
             </Annotation>
           </VStack>
         </Flex>
 
         <Text as="p" maxWidth="974px" fontSize="md" marginTop="6">
-          As a business owner, entrepreneur, or manager, you have your concerns
-          about operating and growing a successful business but in a vast and
-          changing industry, Technology can easily become an obstacle to
-          achieving your own company goals.
+          {t("about-section.description.content-1", {
+            defaultValue:
+              "As a business owner, entrepreneur, or manager, you have your concerns about operating and growing a successful business but in a vast and changing industry, Technology can easily become an obstacle to achieving your own company goals.",
+          })}
         </Text>
 
         <Text as="p" maxWidth="974px" fontSize="md" marginTop="6">
-          At SBX we put at your disposal our knowledge, our openness and our 8+
-          years of skills to bring logical and lasting solutions that create an
-          impact. With our expertise and your vision, we are about to develop
-          something great.
+          {t("about-section.description.content-2", {
+            defaultValue:
+              "At SBX we put at your disposal our knowledge, our openness and our 8+ years of skills to bring logical and lasting solutions that create an impact. With our expertise and your vision, we are about to develop something great.",
+          })}
         </Text>
 
         <Box mt="16">

@@ -15,10 +15,15 @@ import Document, {
 
 import createEmotionCache from "@definitions/utils/createEmotionCache";
 
+import i18nextConfig from "../next-i18next.config";
+
 class CustomDocument extends Document {
   render() {
+    const currentLocale =
+      this.props.__NEXT_DATA__.locale ?? i18nextConfig.i18n.defaultLocale;
+
     return (
-      <Html lang="en">
+      <Html lang={currentLocale}>
         <Head />
         <body>
           <Main />
@@ -48,10 +53,10 @@ CustomDocument.getInitialProps = async (
   // This is important. It prevents emotion to render invalid HTML.
   // See https://github.com/mui-org/material-ui/issues/26561#issuecomment-855286153
   const emotionStyles = extractCriticalToChunks(initialProps.html);
-  const emotionStyleTags = emotionStyles.styles.map((style) => (
+  const emotionStyleTags = emotionStyles.styles.map((style, i) => (
     <style
       data-emotion={`${style.key} ${style.ids.join(" ")}`}
-      key={style.key}
+      key={`${style.key}_${i}`}
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
   ));

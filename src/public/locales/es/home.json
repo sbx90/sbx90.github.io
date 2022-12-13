@@ -1,0 +1,91 @@
+{
+  "about-section": {
+    "arrow-text": "arrow-text",
+    "description": {
+      "content-1": "content-1",
+      "content-2": "content-2"
+    },
+    "title": "title"
+  },
+  "capabilities-section": {
+    "sections": {
+      "backend": {
+        "description": {
+          "content-1": "content-1"
+        },
+        "title": "title"
+      },
+      "branding": {
+        "description": {
+          "content-1": "content-1",
+          "content-2": "content-2"
+        },
+        "title": "title"
+      },
+      "frontend": {
+        "description": {
+          "content-1": "content-1",
+          "content-2": "content-2"
+        },
+        "title": "title"
+      },
+      "web-mobile-apps": {
+        "description": {
+          "content-1": "content-1",
+          "content-2": "content-2"
+        },
+        "title": "title"
+      }
+    },
+    "title": "title"
+  },
+  "consultency-section": {
+    "cta-text": "cta-text",
+    "description": {
+      "content-1": "content-1",
+      "content-2": "content-2",
+      "content-3": "content-3"
+    },
+    "title": "title"
+  },
+  "features": {
+    "consultancy": {
+      "description": {
+        "content-1": "content-1"
+      },
+      "title": "title"
+    },
+    "end-to-end": {
+      "description": {
+        "content-1": "content-1",
+        "content-2": "content-2"
+      },
+      "title": "title"
+    },
+    "system-improvement": {
+      "description": {
+        "content-1": "content-1"
+      },
+      "title": "title"
+    }
+  },
+  "hero-section": {
+    "content-1": "content-1",
+    "cta-button": "cta-button",
+    "scrolling-words": {
+      "word-1": "word-1",
+      "word-2": "word-2",
+      "word-3": "word-3"
+    }
+  },
+  "projects-section": {
+    "raina": {
+      "description": "description",
+      "title": "title"
+    },
+    "vtcam": {
+      "description": "description",
+      "title": "title"
+    }
+  }
+}

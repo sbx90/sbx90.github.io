@@ -1,8 +1,91 @@
 {
-  "page": {
-    "lang": {
-      "intro": "We develop digital design products for startups and enterprises that will save you thousands of design hours and allow you to focus on your products instead of design.",
-      "title": "We are a full stack agency"
+  "about-section": {
+    "arrow-text": "we get it.",
+    "description": {
+      "content-1": "As a business owner, entrepreneur, or manager, you have your concerns about operating and growing a successful business but in a vast and changing industry, Technology can easily become an obstacle to achieving your own company goals.",
+      "content-2": "At SBX we put at your disposal our knowledge, our openness and our 8+ years of skills to bring logical and lasting solutions that create an impact. With our expertise and your vision, we are about to develop something great."
+    },
+    "title": "The world of Software and APP Development can be complex"
+  },
+  "capabilities-section": {
+    "sections": {
+      "backend": {
+        "description": {
+          "content-1": "We believe BackEnd requires perfect synergy of teams and a full understanding of the complete project's picture in the long run. At SBX we are experts in achieving complex structures and working with flexibility to guarantee scalable work with continuous integration and sophistication."
+        },
+        "title": "BackEnd Development"
+      },
+      "branding": {
+        "description": {
+          "content-1": "Through colour palettes, imagery and original design we help our clients consolidate the perfect brand “look & feel” that both inspires and engages customers.",
+          "content-2": "Our branding services focus on creating  a meaningful brand identity that succeeds in sharing your brand’s true voice, growing your business and making an impact."
+        },
+        "title": "Branding & Design"
+      },
+      "frontend": {
+        "description": {
+          "content-1": "FrontEnd Development is a key component for a fast, smooth and optimized performance,which leads to a top user experience.",
+          "content-2": "You can expect from us functional work, fluid navigation and interactive features aimed to adapt to the continuous demands of your market to connect, inspire, engage and loyalize users anywhere."
+        },
+        "title": "FrontEnd Development"
+      },
+      "web-mobile-apps": {
+        "description": {
+          "content-1": "Apps connect users with products, valuable information and key services in real time but behind every APP, there is a huge technological effort and managerial challenge aimed to deliver seamless experiences.",
+          "content-2": "Our team merges technical talent with passion for building great apps that amaze users and significantly boost your brand's growth."
+        },
+        "title": "Web & Mobile Apps"
+      }
+    },
+    "title": "Our Capabitilies"
+  },
+  "consultency-section": {
+    "cta-text": "Schedule a Call",
+    "description": {
+      "content-1": "Regardless of whether you have an existing project or one that is just beginning, our team of experts is qualified to help you create, improve and transform it. We offer a one-to-one consultancy service to take a strategic look into your project and reach your technological objectives.",
+      "content-2": "Our expertise includes:",
+      "content-3": "Django, Graph Creat, Python, UI/UX Development, AWS, React,Rest, Vue, Node, Next.js, Express, Angular"
+    },
+    "title": "Consultancy"
+  },
+  "features": {
+    "consultancy": {
+      "description": {
+        "content-1": "We can provide full consultancy services on any of your technological needs. We are more than happy to help you with professional feedback in any area of the technological development of your idea, project, or product."
+      },
+      "title": "Consultancy & Expertise:"
+    },
+    "end-to-end": {
+      "description": {
+        "content-1": "Do you have an idea that you want to develop and turn into a successful product or service?",
+        "content-2": "We are ready to start from scratch and work by your side to deliver a world-class software product."
+      },
+      "title": "End-to-End Development"
+    },
+    "system-improvement": {
+      "description": {
+        "content-1": "We take care of the analysis and review of your existing project or product to make any required technological upgrades, reduce costs and meet deadlines."
+      },
+      "title": "System Improvement"
+    }
+  },
+  "hero-section": {
+    "content-1": "We make your journey in the world of Software development so much easier and inspiring. What problem can we help you solve?",
+    "cta-button": "Get in touch",
+    "scrolling-words": {
+      "word-1": "think",
+      "word-2": "develop",
+      "word-3": "create"
+    }
+  },
+  "projects-section": {
+    "raina": {
+      "description": "An in-store music streaming system for commercial and high-end venues with custom live DJ mixes.",
+      "title": "Music Streaming Platform"
+    },
+    "vtcam": {
+      "description": "A high-resolution camera system taking sports Bootcamps experiences to the next level.",
+      "title": "Video Analytic Camera"
     }
   }
 }

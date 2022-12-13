@@ -2,6 +2,7 @@ import { ImQuotesLeft, IoIosArrowForward } from "@react-icons";
 
 import React, { useContext, memo } from "react";
 
+import { useTranslation } from "next-i18next";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
@@ -50,21 +51,28 @@ import AppScreenshotHero from "@assets/images/projects/vtcam/vtcam-3.png";
 import PartnershipWithGbx from "@blocks/partnership-with-gbx";
 
 const CustomerStoryOverviewPage: React.FC = () => {
+  const { t } = useTranslation("vtcam");
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme;
 
   /* ----------------------------- Page Contents ---------------------------- */
   const content: T_Content[] = [
     {
-      heading: "Our Work",
+      heading: t("our-work.heading", {
+        defaultValue: "Our Work",
+      }),
       body: [
         {
-          content:
-            "Our client offers training services and athlete performance analysis, for which he uses high-resolution video-capturing cameras. These cameras had an outdated system that needed to be updated both to meet market standards and to reduce and optimize costs.",
+          content: t("our-work.content-1", {
+            defaultValue:
+              "Our client offers training services and athlete performance analysis, for which he uses high-resolution video-capturing cameras. These cameras had an outdated system that needed to be updated both to meet market standards and to reduce and optimize costs.",
+          }),
         },
         {
-          content:
-            "We approached this project in a complete manner, working on the redesign of the Hardware and Software systems to make a way for a top-quality and cost-effective product; Ensuring high image and video quality and simple manageability for the end user through its custom-made app. This upgrade not only allowed us to improve the quality of service offered by our client but also created a new branch of their business to sell the new product.",
+          content: t("our-work.content-1", {
+            defaultValue:
+              "We approached this project in a complete manner, working on the redesign of the Hardware and Software systems to make a way for a top-quality and cost-effective product; Ensuring high image and video quality and simple manageability for the end user through its custom-made app. This upgrade not only allowed us to improve the quality of service offered by our client but also created a new branch of their business to sell the new product.",
+          }),
         },
       ],
       images: [
@@ -92,26 +100,54 @@ const CustomerStoryOverviewPage: React.FC = () => {
       ],
     },
     {
-      heading: "SBX provided:",
+      heading: t("sbx-provided.heading", {
+        defaultValue: "SBX provided:",
+      }),
       headingColor: "#1250E2",
       body: [
         {
           points: [
-            "A complete technological solution, from Back-End to Front-End.",
-            "Hardware manufacturing from prototype to the final product focused on achieving the first prototype as close to the final product as possible.",
-            "Reduced costs.",
-            "Improved end-user experience.",
+            t("sbx-provided.content-1.point-1", {
+              defaultValue:
+                "A complete technological solution, from Back-End to Front-End.",
+            }),
+            t("sbx-provided.content-1.point-2", {
+              defaultValue:
+                "Hardware manufacturing from prototype to the final product focused on achieving the first prototype as close to the final product as possible.",
+            }),
+            t("sbx-provided.content-1.point-3", {
+              defaultValue: "Reduced costs.",
+            }),
+            t("sbx-provided.content-1.point-4", {
+              defaultValue: "Improved end-user experience.",
+            }),
           ],
           contentRight: (
             <CompanyInfo
-              name="VT-CAM"
+              name={t("project-name", {
+                defaultValue: "VT-CAM",
+              })}
               url=""
               logo={
                 <img src={ExactLogo.src} alt="" style={{ maxWidth: "130px" }} />
               }
               info={[
-                { key: "Industry", value: "Sports" },
-                { key: "Location", value: " Chicago, IL" },
+                {
+                  key: t("info-points.industry.label", {
+                    defaultValue: "Industry",
+                  }),
+                  value: t("info-points.industry.value", {
+                    defaultValue: "Sports",
+                  }),
+                },
+                {
+                  key: t("info-points.location.label", {
+                    defaultValue: "Location",
+                  }),
+                  value: t("info-points.location.value", {
+                    defaultValue: "Chicago, IL",
+                  }),
+                },
               ]}
             />
           ),
@@ -143,9 +179,17 @@ const CustomerStoryOverviewPage: React.FC = () => {
           hideBg
           logo={<img src={ExactLogo.src} style={{ maxWidth: "200px" }} />}
           image={AppScreenshotHero}
-          company="Exact"
-          title="“Transforming young athletes through college exposure, training, and development guidance.”"
-          body="Exact Sports provides summer camp services for young athletes from different sports in the United States who wish to train like professionals and reach their full potential. Through technological solutions applied to sports, Exact Sports is the intersection of sports and science for athlete development."
+          company={t("company-name", {
+            defaultValue: "Exact",
+          })}
+          title={t("hero-section.title", {
+            defaultValue:
+              "“Transforming young athletes through college exposure, training, and development guidance.”",
+          })}
+          body={t("hero-section.content-1", {
+            defaultValue:
+              "Exact Sports provides summer camp services for young athletes from different sports in the United States who wish to train like professionals and reach their full potential. Through technological solutions applied to sports, Exact Sports is the intersection of sports and science for athlete development.",
+          })}
           colorScheme={color}
         />
 
@@ -392,7 +436,9 @@ const CompanyInfo: React.FC<
   } & ChakraProps &
     ThemingProps
 > = memo(({ name, url, logo, info, ...rest }) => {
+  const { t } = useTranslation("global");
   const textMuted = useColorModeValue("gray.500", "gray.500");
+
   return (
     <Box
       flex="1"
@@ -429,7 +475,9 @@ const CompanyInfo: React.FC<
           {!!url && (
             <ListItem fontSize="xl" mt={6}>
               <Link d="flex" alignItems="center" href={url} isExternal>
-                Visit Website
+                {t("common-words.visit-website", {
+                  defaultValue: "Visit Website",
+                })}
               </Link>
             </ListItem>
           )}

@@ -1,0 +1,21 @@
+{
+  "members": {
+    "giancarlo": {
+      "display-name": "display-name",
+      "title": "title"
+    },
+    "maria": {
+      "display-name": "display-name",
+      "title": "title"
+    },
+    "sonia": {
+      "display-name": "display-name",
+      "title": "title"
+    },
+    "stefano": {
+      "display-name": "display-name",
+      "title": "title"
+    }
+  },
+  "section-title": "section-title"
+}

@@ -1,0 +1,37 @@
+{
+  "company-name": "Raina",
+  "hero-section": {
+    "content-1": "Raina is the ultimate in-store music streaming platform that provides custom DJ mixes for conventional and luxury venues all over the world. Raina gives its customers access to constantly updated and meticulously curated playlists for them to enjoy varied music with the best sound quality in their businesses.",
+    "title": "“Crafted by humans, perfected by technology”"
+  },
+  "info-points": {
+    "industry": {
+      "label": "Industry",
+      "value": "Music Tech"
+    },
+    "location": {
+      "label": "Location",
+      "value": "New York, USA."
+    }
+  },
+  "our-work": {
+    "content-1": "Our client was looking for a total update of its system, which would improve the user experience of its customers and also exceed the current standards of the market with its unique and innovative features.",
+    "content-2": "SBX's mission was to take the needs of our client and ground them in a clear and specific action plan, to work on both the Software development and Hardware development and achieve a reliable product, ready to go into the market and that could also be scaled with mass production.",
+    "heading": "Our Work"
+  },
+  "project-name": "Raina Music",
+  "sbx-provided": {
+    "content-1": {
+      "point-1": "A complete solution, from Back-End to Front-End.",
+      "point-2": "Total project development to a final product.",
+      "point-3": "Teams management, meeting deadlines and reducing development costs.",
+      "point-4": "Reduction of manufacturing costs.",
+      "point-5": "Low-level programming, working directly with the hardware to achieve much faster and more reliable response times."
+    },
+    "heading": "SBX provided:"
+  },
+  "seo": {
+    "description": "Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes.",
+    "name": "Raina"
+  }
+}

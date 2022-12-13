@@ -1,0 +1,31 @@
+{
+  "company-name": "Exact",
+  "hero-section": {
+    "content-1": "Exact Sports provides summer camp services for young athletes from different sports in the United States who wish to train like professionals and reach their full potential. Through technological solutions applied to sports, Exact Sports is the intersection of sports and science for athlete development.",
+    "title": "“Transforming young athletes through college exposure, training, and development guidance.”"
+  },
+  "info-points": {
+    "industry": {
+      "label": "Industry",
+      "value": "Sports"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Chicago, IL"
+    }
+  },
+  "our-work": {
+    "content-1": "We approached this project in a complete manner, working on the redesign of the Hardware and Software systems to make a way for a top-quality and cost-effective product; Ensuring high image and video quality and simple manageability for the end user through its custom-made app. This upgrade not only allowed us to improve the quality of service offered by our client but also created a new branch of their business to sell the new product.",
+    "heading": "Our Work"
+  },
+  "project-name": "VT-CAM",
+  "sbx-provided": {
+    "content-1": {
+      "point-1": "A complete technological solution, from Back-End to Front-End.",
+      "point-2": "Hardware manufacturing from prototype to the final product focused on achieving the first prototype as close to the final product as possible.",
+      "point-3": "Reduced costs.",
+      "point-4": "Improved end-user experience."
+    },
+    "heading": "SBX provided:"
+  }
+}

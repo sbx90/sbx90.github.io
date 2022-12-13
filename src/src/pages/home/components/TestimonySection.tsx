@@ -1,5 +1,9 @@
 import { ImQuotesLeft } from "@react-icons";
 
+import { useMemo } from "react";
+
+import { useTranslation } from "next-i18next";
+
 import { Icon, Box, Container, Center, Flex, Heading } from "@chakra-ui/react";
 
 import { SECTION_ID } from "@definitions/navigation/main";
@@ -9,19 +13,6 @@ import { RatingDefault } from "@components/rating";
 import { TestimonialBlurredBackdrop } from "@components/testimonials/testimonial-blurred-backdrop";
 
 import BackgroundOne from "@assets/testiomial-bg-1.svg";
-
-const TESTIMONY_LIST = [
-  {
-    name: "James",
-    position: "Executive Director",
-    content: `I see SBX as the perfect ally in software development. From the beginning idea to the final product we’ve felt completely guided and supported. We are excited to keep on working in future projects.`,
-  },
-  {
-    name: "Miguel A.",
-    position: "Project Manager",
-    content: `We developed a great partnership with SBX for the past two years and their dedication is evident in the upgrade of our company service.`,
-  },
-];
 
 const TestimonyCarousel: React.FC<{
   testimony: { name: string; position: string; content: string }[];
@@ -75,9 +66,43 @@ const TestimonyCarousel: React.FC<{
 };
 
 const TestimonySection: React.FC = (): JSX.Element => {
+  const { t } = useTranslation("testimony");
+
+  const TESTIMONY_LIST = useMemo(
+    () => [
+      {
+        name: t("testimony.james.display-name", {
+          defaultValue: "James",
+        }),
+        position: t("testimony.james.title", {
+          defaultValue: "Executive Director",
+        }),
+        content: t("testimony.james.content", {
+          defaultValue: `I see SBX as the perfect ally in software development. From the beginning idea to the final product we’ve felt completely guided and supported. We are excited to keep on working in future projects.`,
+        }),
+      },
+      {
+        name: t("testimony.miguel.display-name", {
+          defaultValue: "Miguel A.",
+        }),
+        position: t("testimony.miguel.title", {
+          defaultValue: "Project Manager",
+        }),
+        content: t("testimony.miguel.content", {
+          defaultValue: `We developed a great partnership with SBX for the past two years and their dedication is evident in the upgrade of our company service.`,
+        }),
+      },
+    ],
+    [],
+  );
+
   return (
     <Container maxW="container.xl" id={SECTION_ID.CLIENTS_SECTION} py="16">
-      <Heading fontSize="40px">What our clients have to say</Heading>
+      <Heading fontSize="40px">
+        {t("section-heading", {
+          defaultValue: "What our clients have to say",
+        })}
+      </Heading>
 
       <TestimonyCarousel testimony={TESTIMONY_LIST} />
     </Container>

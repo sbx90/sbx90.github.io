@@ -104,8 +104,8 @@ const AwardBlock: React.FC<
             spacing={10}
             direction={["column", "column", "row", "row"]}
           >
-            {items.map((item) => (
-              <Box w="full">
+            {items.map((item, index) => (
+              <Box w="full" key={index}>
                 <MotionBox
                   variants={item_variant}
                   d="flex"

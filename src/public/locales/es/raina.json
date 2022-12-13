@@ -1,0 +1,37 @@
+{
+  "company-name": "company-name",
+  "hero-section": {
+    "content-1": "content-1",
+    "title": "title"
+  },
+  "info-points": {
+    "industry": {
+      "label": "label",
+      "value": "value"
+    },
+    "location": {
+      "label": "label",
+      "value": "value"
+    }
+  },
+  "our-work": {
+    "content-1": "content-1",
+    "content-2": "content-2",
+    "heading": "heading"
+  },
+  "project-name": "project-name",
+  "sbx-provided": {
+    "content-1": {
+      "point-1": "point-1",
+      "point-2": "point-2",
+      "point-3": "point-3",
+      "point-4": "point-4",
+      "point-5": "point-5"
+    },
+    "heading": "heading"
+  },
+  "seo": {
+    "description": "description",
+    "name": "name"
+  }
+}

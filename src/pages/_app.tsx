@@ -28,6 +28,7 @@ import ContactUsModal, {
 } from "@blocks/contact-us-modal";
 import ShortcutNotificationBlock from "@blocks/shortcut-notification";
 
+import nextI18NextConfig from "../next-i18next.config.js";
 import SEO from "../next-seo.config";
 
 type ComponentWithPageLayout = AppProps & {
@@ -62,16 +63,18 @@ function MercuryApp({
               </Layout>
             )}
             {false && <ShortcutNotificationBlock />}
-            <ColorModeSwitcher
-              pos="fixed"
-              top="calc(50% - 144px / 2)"
-              zIndex="sticky"
-              width="60px"
-              // shadow="xl"
-              boxShadow="10px 0px 15px rgba(0,0,0,0.15)"
-              rounded="xl"
-              bg={useColorModeValue("white", "blackAlpha.900")}
-            />
+            {false && (
+              <ColorModeSwitcher
+                pos="fixed"
+                top="calc(50% - 144px / 2)"
+                zIndex="sticky"
+                width="60px"
+                // shadow="xl"
+                boxShadow="10px 0px 15px rgba(0,0,0,0.15)"
+                rounded="xl"
+                bg={useColorModeValue("white", "blackAlpha.900")}
+              />
+            )}
 
             <ContactUsModal />
           </ContactUsModalProvider>
@@ -81,4 +84,4 @@ function MercuryApp({
   );
 }
 
-export default appWithTranslation(MercuryApp);
+export default appWithTranslation(MercuryApp, nextI18NextConfig);

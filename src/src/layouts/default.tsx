@@ -2,6 +2,7 @@ import React, { memo } from "react";
 
 import { IHeader } from "src/components/header/header";
 
+import { useTranslation } from "next-i18next";
 import dynamic from "next/dynamic";
 
 import { Spinner, ChakraProps, Box } from "@chakra-ui/react";
@@ -9,6 +10,7 @@ import { Spinner, ChakraProps, Box } from "@chakra-ui/react";
 import { ModalAccountProvider } from "@definitions/context/modal.account";
 import { __DEV__ } from "@definitions/utils";
 
+// import FooterDefault from "@components/footer/footer-large-navigation-appstore";
 import useScreenType from "../hooks/useScreenType";
 import { ILayout } from "./layouts";
 
@@ -43,6 +45,7 @@ const DefaultLayout: React.FC<ILayout.IProps> = ({
   hideFooter,
   contentContainerProps,
 }): JSX.Element => {
+  const { ready } = useTranslation("global");
   const { isScreenSmallerThanTablet } = useScreenType();
 
   return (

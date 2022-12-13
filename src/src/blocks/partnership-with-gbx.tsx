@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import { useTranslation } from "next-i18next";
+
 import {
   ThemingProps,
   ChakraProps,
@@ -20,16 +22,24 @@ import useScreenType from "../hooks/useScreenType";
 interface ITagListBlock extends ChakraProps, ThemingProps {}
 
 const PartnershipWithGbx: React.FC<ITagListBlock> = (props) => {
+  const { t } = useTranslation("global");
   const { isScreenSmallerThanTablet } = useScreenType();
 
   return (
     <Container maxW="container.xl" {...props} px="16">
       <Text fontSize="26" fontWeight="bold">
-        In partnership with:
+        {t("gbx-partnership-section.heading", {
+          defaultValue: "In partnership with:",
+        })}
       </Text>
 
       <Box maxWidth="320" mx="auto">
-        <img src={GbcPartnership.src} alt="Partner with GBX" />
+        <img
+          src={GbcPartnership.src}
+          alt={t("gbx-partnership-section.image-alt-text", {
+            defaultValue: "Partner with GBX",
+          })}
+        />
       </Box>
 
       <Flex justifyContent="center">
@@ -46,7 +56,9 @@ const PartnershipWithGbx: React.FC<ITagListBlock> = (props) => {
             fontWeight="500"
             boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
           >
-            Visit Website
+            {t("gbx-partnership-section.site-link", {
+              defaultValue: "Visit Website",
+            })}
           </Button>
         </a>
       </Flex>

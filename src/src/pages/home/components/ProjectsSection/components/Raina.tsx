@@ -3,6 +3,8 @@ import Spline from "@splinetool/react-spline";
 
 import styled from "styled-components";
 
+import { useTranslation } from "next-i18next";
+
 import RainaLogo from "@assets/images/branding/raina-logo.png";
 // import RainaScreenshot1 from "@assets/images/projects/raina/raina-1.png";
 import RainaScreenshot2 from "@assets/images/projects/raina/raina-2.png";
@@ -28,7 +30,7 @@ const RAINA_SCREENSHOTS_DATA = [
       left: "17%",
       width: "263px",
       height: "440px",
-      "object-fit": "contain",
+      objectFit: "contain",
     },
   },
   {
@@ -38,7 +40,7 @@ const RAINA_SCREENSHOTS_DATA = [
       left: "calc(29% + 3rem)",
       width: "306px",
       height: "470px",
-      "object-fit": "contain",
+      objectFit: "contain",
     },
   },
   // {
@@ -48,7 +50,7 @@ const RAINA_SCREENSHOTS_DATA = [
   //     left: "calc(48% + 206px + 3rem)",
   //     width: "218px",
   //     height: "396px",
-  //     "object-fit": "contain",
+  //     objectFit: "contain",
   //   },
   // },
 ];
@@ -57,17 +59,18 @@ const StyledScreenshot = styled.img`
   position: absolute;
 `;
 
-const StyledSpline = styled(Spline)<{ isScreenSmallerThanTablet: boolean }>`
+const StyledSpline = styled(Spline)<{ $isScreenSmallerThanTablet: boolean }>`
   position: absolute;
-  top: ${({ isScreenSmallerThanTablet }) =>
-    isScreenSmallerThanTablet ? "25%" : "-142px"};
-  left: ${({ isScreenSmallerThanTablet }) =>
-    isScreenSmallerThanTablet ? "-86%" : "28%"};
+  top: ${({ $isScreenSmallerThanTablet }) =>
+    $isScreenSmallerThanTablet ? "25%" : "-142px"};
+  left: ${({ $isScreenSmallerThanTablet }) =>
+    $isScreenSmallerThanTablet ? "-86%" : "28%"};
   margin: 0;
 `;
 // top: 152px;
 // left: -86%;
 const Raina: React.FC = (): JSX.Element => {
+  const { t } = useTranslation("home");
   const { isScreenSmallerThanTablet } = useScreenType();
 
   return (
@@ -75,20 +78,29 @@ const Raina: React.FC = (): JSX.Element => {
       logo={RainaLogo.src}
       background="#0E1129"
       color="#fff"
-      title="Music Streaming Platform"
-      description="An in-store music streaming system for commercial and high-end venues with custom live DJ mixes."
+      title={t("projects-section.raina.title", {
+        defaultValue: "Music Streaming Platform",
+      })}
+      description={t("projects-section.raina.description", {
+        defaultValue:
+          "An in-store music streaming system for commercial and high-end venues with custom live DJ mixes.",
+      })}
       projectPageUrl="/portfolio/raina"
       height="160vh"
     >
       <StyledSpline
-        isScreenSmallerThanTablet={isScreenSmallerThanTablet}
+        $isScreenSmallerThanTablet={isScreenSmallerThanTablet}
         scene="https://prod.spline.design/MOCsFZqxRraZnNGX/scene.splinecode"
       />
 
       {!isScreenSmallerThanTablet &&
         RAINA_SCREENSHOTS_DATA.map((s, i) => {
           return (
-            <StyledScreenshot key={i} src={s.image} style={s.style || {}} />
+            <StyledScreenshot
+              key={i}
+              src={s.image}
+              style={(s.style || {}) as any}
+            />
           );
         })}
     </ProjectDisplay>

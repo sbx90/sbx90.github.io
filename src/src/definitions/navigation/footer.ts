@@ -1,11 +1,12 @@
 export const CopyrightText = `© ${new Date().getFullYear()} Mercury Templates. All rights reserved`;
 
-interface IFooterLinks {
+export interface IFooterLinks {
   title: string;
   items: {
     title: string;
     href: string;
     tag?: string;
+    onClick?: () => void;
   }[];
 }
 

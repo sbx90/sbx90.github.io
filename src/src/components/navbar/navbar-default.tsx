@@ -1,3 +1,5 @@
+import useHeaderItemsList from "@root/src/hooks/useHeaderItemsList";
+
 import { memo, useCallback, useContext } from "react";
 
 import styled from "styled-components";
@@ -24,15 +26,12 @@ import {
   MobileMenuProvider,
   MobileMenuCtx,
 } from "@definitions/context/mobile.menu";
-import { main, SECTION_ID } from "@definitions/navigation/main";
 import { __DEV__ } from "@definitions/utils";
 import customScrollbar from "@definitions/utils/scrollbar";
 
 import HamburgerIcon from "@components/hamburger-icon";
 import { LogoWithSiteName } from "@components/logo/logo-with-site-name-interactive";
 import ThemeSwitch from "@components/theme-switch";
-
-import { useContactUsModal } from "@blocks/contact-us-modal";
 
 import MenuItemTag from "./menu-item-tag";
 import MobileNavbar from "./mobile-navbar";
@@ -47,7 +46,9 @@ const NavbarDefault: React.FC<INavbar.IProps> = ({
   children,
   ...rest
 }) => {
+  const { items: defaultMenuItems } = useHeaderItemsList();
   const color = isDark ? "whiteAlpha.900" : "currentColor";
+
   return (
     <MobileMenuProvider>
       <Box
@@ -66,7 +67,7 @@ const NavbarDefault: React.FC<INavbar.IProps> = ({
             spacing={[0, 0, 1, 1]}
             display={{ base: "none", md: "flex" }}
           >
-            <AllMenu isDark={isDark} items={items ? items : main} />
+            <AllMenu isDark={isDark} items={items ? items : defaultMenuItems} />
           </HStack>
           {endItems ? (
             endItems
@@ -89,7 +90,6 @@ if (__DEV__) {
 
 const AllMenu = memo(
   ({ isDark, items }: { isDark?: boolean; items: INavbar.IItem[] }) => {
-    const { onOpen } = useContactUsModal();
     const buttonStyle = {
       color: isDark ? "whiteAlpha.900" : "inherit",
       _hover: {
@@ -107,8 +107,10 @@ const AllMenu = memo(
     return (
       <>
         {items.map((item, index) => {
+          const { title } = item;
+
           return item?.subitems ? (
-            <Menu id={item.title} key={index} isLazy>
+            <Menu id={item.id} key={index} isLazy>
               <MenuButton
                 variant="ghost"
                 as={Button}
@@ -116,7 +118,7 @@ const AllMenu = memo(
                 fontSize="xl"
                 {...buttonStyle}
               >
-                {item.title}
+                {title}
               </MenuButton>
               <MenuList
                 overflowX="auto"
@@ -128,27 +130,28 @@ const AllMenu = memo(
                   return sub.title == "---" ? (
                     <MenuDivider key={`${sub.title}-${idx}`} />
                   ) : (
-                    <MenuSubItem key={`${sub.title}-${idx}`} {...sub} />
+                    <MenuSubItem {...sub} key={`${sub.title}-${idx}`} />
                   );
                 })}
               </MenuList>
             </Menu>
-          ) : item.id === SECTION_ID.CONTACT_US_SECTION ? (
+          ) : item.onClick ? (
             <Button
               variant="ghost"
               fontSize="xl"
               {...buttonStyle}
               onClick={() => {
-                onOpen();
+                item.onClick();
               }}
+              key={index}
             >
-              {item.title}
+              {title}
               <MenuItemTag title={item.title} />
             </Button>
           ) : (
             <NextLink key={index} href={item.href} passHref>
               <Button variant="ghost" fontSize="xl" {...buttonStyle}>
-                {item.title}
+                {title}
                 <MenuItemTag title={item.title} />
               </Button>
             </NextLink>

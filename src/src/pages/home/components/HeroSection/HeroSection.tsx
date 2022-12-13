@@ -2,6 +2,8 @@ import useScreenType from "@root/src/hooks/useScreenType";
 
 import React from "react";
 
+import { Trans, useTranslation } from "next-i18next";
+
 import {
   ChakraProps,
   Container,
@@ -20,7 +22,31 @@ import CanvasDisplay from "./components/CanvasDisplay";
 import { Point3D } from "./components/classes";
 
 const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
+  const { t } = useTranslation("home");
   const { isScreenSmallerThanTablet } = useScreenType();
+
+  const scrollingText = (
+    <TextScrollAnimator
+      height={isScreenSmallerThanTablet ? "32px" : "83px"}
+      itemList={[
+        t("hero-section.scrolling-words.word-1", {
+          defaultValue: "think",
+        }),
+        t("hero-section.scrolling-words.word-2", {
+          defaultValue: "develop",
+        }),
+        t("hero-section.scrolling-words.word-3", {
+          defaultValue: "create",
+        }),
+      ]}
+      style={{
+        position: "relative",
+        bottom: isScreenSmallerThanTablet ? "-7px" : "-19px",
+        textAlign: "left",
+        color: "#1250E2",
+      }}
+    />
+  );
 
   return (
     <Box w="full" position="relative" overflow="hidden">
@@ -70,25 +96,30 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
               maxW={650}
               m={0}
             >
-              We&nbsp;
-              <TextScrollAnimator
-                height={isScreenSmallerThanTablet ? "32px" : "83px"}
-                itemList={["think", "develop", "create"]}
-                style={{
-                  position: "relative",
-                  bottom: isScreenSmallerThanTablet ? "-7px" : "-19px",
-                  textAlign: "left",
-                  color: "#1250E2",
+              <Trans
+                i18nKey="hero-section.title"
+                defaultValue="We <scroll_text></scroll_text> <text_break></text_break> On a higher level."
+                t={t}
+                components={{
+                  scroll_text: scrollingText,
+                  text_break: (
+                    <>
+                      <br />
+                    </>
+                  ),
                 }}
               />
-              <br />
-              On a higher level.
             </Heading>
 
+            <hr />
+
             <Text as="p" fontSize={["2xl", "3xl", "3xl"]}>
-              We make your journey in the world of Software development so much
-              easier and inspiring. What problem can we help you solve?
+              {t("hero-section.content-1", {
+                defaultValue:
+                  "We make your journey in the world of Software development so much easier and inspiring. What problem can we help you solve?",
+              })}
             </Text>
+
             <Button
               variant="solid"
               color="#000000"
@@ -101,7 +132,9 @@ const HeroSection: React.FC<ChakraProps & ThemingProps> = (props) => {
               fontWeight="500"
               boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
             >
-              Get in touch
+              {t("hero-section.cta-button", {
+                defaultValue: "Get in touch",
+              })}
             </Button>
           </VStack>
         </Container>

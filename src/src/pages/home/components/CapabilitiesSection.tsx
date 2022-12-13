@@ -1,5 +1,3 @@
-import useScreenType from "@root/src/hooks/useScreenType";
-
 import React from "react";
 
 import { Box, createIcon, Heading, Container, Flex } from "@chakra-ui/react";
@@ -17,8 +15,6 @@ import AppFeatures from "@blocks/mobileapp/features";
 import FeaturesListVertical from "@blocks/mobileapp/features-list-vertical";
 
 const CapabilitiesSection: React.FC = () => {
-  const { isScreenSmallerThanTablet } = useScreenType();
-
   return (
     <Box width="full" id={SECTION_ID.OUR_SERVICES_SECTION}>
       <Container maxW="container.lg">
@@ -42,10 +38,15 @@ const CapabilitiesSection: React.FC = () => {
 
         <Heading>Our Capabitilies</Heading>
 
-        <Flex direction="column" alignItems="center" pt="20px">
+        <Flex
+          direction="column"
+          alignItems="center"
+          pt={["50px", "50px", "50px", "50px"]}
+          marginTop="12"
+        >
           <Container py={0} maxWidth="container.xl">
             <FeaturesListVertical
-              showContentFirst={!isScreenSmallerThanTablet}
+              showContentFirst
               title="BackEnd Development"
               body="We believe BackEnd requires perfect synergy of teams and a full understanding of the complete project's picture in the long run. At SBX we are experts in achieving complex structures and working with flexibility to guarantee scalable work with continuous integration and sophistication."
               image={BackendImage}
@@ -54,7 +55,12 @@ const CapabilitiesSection: React.FC = () => {
           </Container>
         </Flex>
 
-        <Flex direction="column" alignItems="center" mt={[0, 0, 0, "-40"]}>
+        <Flex
+          direction="column"
+          alignItems="center"
+          pb={[16, 16, 0, 0, 0]}
+          marginTop="8"
+        >
           <Container py={0} maxWidth="container.xl">
             <AppFeatures
               title="FrontEnd Development"
@@ -67,9 +73,13 @@ const CapabilitiesSection: React.FC = () => {
           </Container>
         </Flex>
 
-        <Container maxWidth="container.xl">
+        <Container
+          pt={["50px", "50px", "50px", "50px"]}
+          maxWidth="container.xl"
+          marginTop="16"
+        >
           <FeaturesListVertical
-            showContentFirst={!isScreenSmallerThanTablet}
+            showContentFirst
             title="Web & Mobile Apps"
             body={[
               "Apps connect users with products, valuable information and key services in real time but behind every APP, there is a huge technological effort and managerial challenge aimed to deliver seamless experiences.",
@@ -80,7 +90,12 @@ const CapabilitiesSection: React.FC = () => {
           />
         </Container>
 
-        <Flex direction="column" alignItems="center" pb={[16, 16, 0, 0, 0]}>
+        <Flex
+          direction="column"
+          alignItems="center"
+          pb={[16, 16, 0, 0, 0]}
+          marginTop="8"
+        >
           <Container py={0} maxWidth="container.xl">
             <AppFeatures
               title="Branding & Design"

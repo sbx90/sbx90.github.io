@@ -1,0 +1,21 @@
+{
+  "members": {
+    "giancarlo": {
+      "display-name": "Giancarlo Bregante",
+      "title": "Co-Founder & CEO"
+    },
+    "maria": {
+      "display-name": "Maria Isabel Moragas",
+      "title": "Asistant Director"
+    },
+    "sonia": {
+      "display-name": "Sonia Gómez",
+      "title": "COO"
+    },
+    "stefano": {
+      "display-name": "Stefano Bregante",
+      "title": "CEO & Co- Founder"
+    }
+  },
+  "section-title": "Our Team"
+}

@@ -2,6 +2,7 @@ import { ImQuotesLeft, IoIosArrowForward } from "@react-icons";
 
 import React, { useContext, memo } from "react";
 
+import { useTranslation } from "next-i18next";
 import { NextSeo } from "next-seo";
 import NextLink from "next/link";
 
@@ -52,21 +53,28 @@ import RainaScreenshotMobile1 from "@assets/images/projects/raina/raina-5.png";
 import PartnershipWithGbx from "@blocks/partnership-with-gbx";
 
 const CustomerStoryOverviewPage: React.FC = () => {
+  const { t } = useTranslation("raina");
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme;
 
   /* ----------------------------- Page Contents ---------------------------- */
   const content: T_Content[] = [
     {
-      heading: "Our Work",
+      heading: t("our-work.heading", {
+        defaultValue: "Our Work",
+      }),
       body: [
         {
-          content:
-            "Our client was looking for a total update of its system, which would improve the user experience of its customers and also exceed the current standards of the market with its unique and innovative features.",
+          content: t("our-work.content-1", {
+            defaultValue:
+              "Our client was looking for a total update of its system, which would improve the user experience of its customers and also exceed the current standards of the market with its unique and innovative features.",
+          }),
         },
         {
-          content:
-            "SBX's mission was to take the needs of our client and ground them in a clear and specific action plan, to work on both the Software development and Hardware development and achieve a reliable product, ready to go into the market and that could also be scaled with mass production.",
+          content: t("our-work.content-2", {
+            defaultValue:
+              "SBX's mission was to take the needs of our client and ground them in a clear and specific action plan, to work on both the Software development and Hardware development and achieve a reliable product, ready to go into the market and that could also be scaled with mass production.",
+          }),
         },
       ],
       images: [
@@ -93,25 +101,55 @@ const CustomerStoryOverviewPage: React.FC = () => {
       ],
     },
     {
-      heading: "SBX provided:",
+      heading: t("sbx-provided.heading", {
+        defaultValue: "SBX provided:",
+      }),
       headingColor: "#1250E2",
       body: [
         {
           points: [
-            "A complete solution, from Back-End to Front-End.",
-            "Total project development to a final product.",
-            "Teams management, meeting deadlines and reducing development costs.",
-            "Reduction of manufacturing costs.",
-            "Low-level programming, working directly with the hardware to achieve much faster and more reliable response times.",
+            t("sbx-provided.content-1.point-1", {
+              defaultValue: "A complete solution, from Back-End to Front-End.",
+            }),
+            t("sbx-provided.content-1.point-2", {
+              defaultValue: "Total project development to a final product.",
+            }),
+            t("sbx-provided.content-1.point-3", {
+              defaultValue:
+                "Teams management, meeting deadlines and reducing development costs.",
+            }),
+            t("sbx-provided.content-1.point-4", {
+              defaultValue: "Reduction of manufacturing costs.",
+            }),
+            t("sbx-provided.content-1.point-5", {
+              defaultValue:
+                "Low-level programming, working directly with the hardware to achieve much faster and more reliable response times.",
+            }),
           ],
           contentRight: (
             <CompanyInfo
-              name="Raina Music"
+              name={t("project-name", {
+                defaultValue: "Raina Music",
+              })}
               url="https://www.rainamusic.com/"
               logo={<img src={RainaLogo.src} alt="" />}
               info={[
-                { key: "Industry", value: "Music Tech" },
-                { key: "Location", value: "New York, USA." },
+                {
+                  key: t("info-points.industry.label", {
+                    defaultValue: "Industry",
+                  }),
+                  value: t("info-points.industry.value", {
+                    defaultValue: "Music Tech",
+                  }),
+                },
+                {
+                  key: t("info-points.location.label", {
+                    defaultValue: "Location",
+                  }),
+                  value: t("info-points.location.value", {
+                    defaultValue: "New York, USA.",
+                  }),
+                },
               ]}
             />
           ),
@@ -123,8 +161,13 @@ const CustomerStoryOverviewPage: React.FC = () => {
   return (
     <Box>
       <NextSeo
-        title="Raina"
-        description="Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes."
+        title={t("seo.name", {
+          defaultValue: "Raina",
+        })}
+        description={t("seo.description", {
+          defaultValue:
+            "Music Streaming Platform. An in-store music streaming system for commercial and high-end venues with custom live DJ mixes.",
+        })}
       />
       <chakra.main
         sx={{
@@ -143,9 +186,16 @@ const CustomerStoryOverviewPage: React.FC = () => {
           hideBg
           logo={<img src={RainaLogo.src} />}
           image={RainaScreenshotHero}
-          company="Raina"
-          title="“Crafted by humans, perfected by technology”"
-          body="Raina is the ultimate in-store music streaming platform that provides custom DJ mixes for conventional and luxury venues all over the world. Raina gives its customers access to constantly updated and meticulously curated playlists for them to enjoy varied music with the best sound quality in their businesses."
+          company={t("company-name", {
+            defaultValue: "Raina",
+          })}
+          title={t("hero-section.title", {
+            defaultValue: "“Crafted by humans, perfected by technology”",
+          })}
+          body={t("hero-section.content-1", {
+            defaultValue:
+              "Raina is the ultimate in-store music streaming platform that provides custom DJ mixes for conventional and luxury venues all over the world. Raina gives its customers access to constantly updated and meticulously curated playlists for them to enjoy varied music with the best sound quality in their businesses.",
+          })}
           colorScheme={color}
         />
 
@@ -392,7 +442,9 @@ const CompanyInfo: React.FC<
   } & ChakraProps &
     ThemingProps
 > = memo(({ name, url, logo, info, ...rest }) => {
+  const { t } = useTranslation("global");
   const textMuted = useColorModeValue("gray.500", "gray.500");
+
   return (
     <Box
       flex="1"
@@ -429,7 +481,9 @@ const CompanyInfo: React.FC<
           {!!url && (
             <ListItem fontSize="xl" mt={6}>
               <Link d="flex" alignItems="center" href={url} isExternal>
-                Visit Website
+                {t("common-words.visit-website", {
+                  defaultValue: "Visit Website",
+                })}
               </Link>
             </ListItem>
           )}

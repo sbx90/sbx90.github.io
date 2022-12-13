@@ -8,6 +8,10 @@ interface IuseRefScrollProgress<T> {
   offsetTop: number | null;
 }
 
+function round(value: number) {
+  return Math.round((value + Number.EPSILON) * 100000) / 100000;
+}
+
 export function useRefScrollProgress<T extends HTMLElement | null>(
   inputRef: MutableRefObject<T>,
   offset = 100,
@@ -29,7 +33,7 @@ export function useRefScrollProgress<T extends HTMLElement | null>(
         window.pageYOffset || document.documentElement.scrollTop;
       const offsetTopNew = rect.top + scrollTop - windowH + offset;
 
-      if (Math.round(offsetTop) !== Math.round(offsetTopNew)) {
+      if (round(offsetTop) !== round(offsetTopNew)) {
         setOffsetTop(offsetTopNew);
       }
 
@@ -41,10 +45,10 @@ export function useRefScrollProgress<T extends HTMLElement | null>(
       const startPositionNew = offsetTopNew / bodyH;
       const endPositionNew = (offsetTopNew + rect.height) / (bodyH - windowH);
 
-      if (Math.round(start) !== Math.round(startPositionNew)) {
+      if (round(start) !== round(startPositionNew)) {
         setStart(startPositionNew);
       }
-      if (Math.round(end) !== Math.round(endPositionNew)) {
+      if (round(end) !== round(endPositionNew)) {
         setEnd(endPositionNew);
       }
     });

@@ -2,6 +2,8 @@ import useScreenType from "@root/src/hooks/useScreenType";
 
 import styled from "styled-components";
 
+import { useTranslation } from "next-i18next";
+
 import ImageComparisonSlider from "@components/image-comparison-slider";
 
 import ExactLogo from "@assets/images/branding/exact-logo.png";
@@ -27,15 +29,21 @@ const StyledScreenshot = styled.img`
 `;
 
 const Vtcam: React.FC = (): JSX.Element => {
+  const { t } = useTranslation("home");
   const { isScreenSmallerThanTablet } = useScreenType();
 
   return (
     <ProjectDisplay
       logo={ExactLogo.src}
-      title="Video Analytic Camera"
+      title={t("projects-section.vtcam.title", {
+        defaultValue: "Video Analytic Camera",
+      })}
+      description={t("projects-section.vtcam.description", {
+        defaultValue:
+          "A high-resolution camera system taking sports Bootcamps experiences to the next level.",
+      })}
       background="#699CFF"
       color="#000"
-      description="A high-resolution camera system taking sports Bootcamps experiences to the next level."
       projectPageUrl="/portfolio/vt-cam"
       height="120vh"
     >

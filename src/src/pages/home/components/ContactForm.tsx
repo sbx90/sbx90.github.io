@@ -13,6 +13,8 @@ import { useViewportScroll } from "framer-motion";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
+import { useTranslation } from "next-i18next";
+
 import {
   Button,
   ChakraProps,
@@ -41,9 +43,10 @@ import { __DEV__ } from "@definitions/utils";
 
 import TransitionScreen from "@components/TransitionScreen";
 
-export const ContactTansitionPage: React.FC<ChakraProps & ThemingProps> = (
+export const ContactTransitionPage: React.FC<ChakraProps & ThemingProps> = (
   props,
 ) => {
+  const { t } = useTranslation("global");
   const ref = useRef<HTMLDivElement | null>(null);
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme; // global default primary theme color
@@ -78,10 +81,14 @@ export const ContactTansitionPage: React.FC<ChakraProps & ThemingProps> = (
         >
           <Container maxW="container.md">
             <Heading mb={4} fontSize={["2xl"]} textAlign="left">
-              Everything begins with an idea.
+              {t("contact.heading", {
+                defaultValue: "Everything begins with an idea.",
+              })}
             </Heading>
             <Text maxWidth="400px" textAlign="left">
-              Get in touch today.
+              {t("contact.subheading", {
+                defaultValue: "Get in touch today.",
+              })}
             </Text>
             {/* Contact Form */}
             <ContactForm colorScheme={color} mt={[5, 5, 10]} />
@@ -100,6 +107,7 @@ const ContactSimplePage: React.FC<IContactSimplePage> = ({
   formProps = {},
   ...restProps
 }) => {
+  const { t } = useTranslation("global");
   const ref = useRef<HTMLDivElement | null>(null);
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme; // global default primary theme color
@@ -109,10 +117,14 @@ const ContactSimplePage: React.FC<IContactSimplePage> = ({
       <Flex direction={["column-reverse", "column-reverse", "column"]}>
         <Container maxW="container.md">
           <Heading mb={4} fontSize={["2xl"]} textAlign="left">
-            Everything begins with an idea.
+            {t("contact.heading", {
+              defaultValue: "Everything begins with an idea.",
+            })}
           </Heading>
           <Text maxWidth="400px" textAlign="left">
-            Get in touch today.
+            {t("contact.subheading", {
+              defaultValue: "Get in touch today.",
+            })}
           </Text>
           {/* Contact Form */}
           <ContactForm colorScheme={color} mt={[5, 5, 10]} {...formProps} />
@@ -210,6 +222,7 @@ interface IContactForm extends ChakraProps, ThemingProps {
 
 const ContactForm: React.FC<IContactForm> = memo(
   ({ vertical, colorScheme = "gray", ...rest }) => {
+    const { t } = useTranslation("global");
     const [
       formData, // eslint-disable-line @typescript-eslint/no-unused-vars
       setFormData,
@@ -247,10 +260,16 @@ const ContactForm: React.FC<IContactForm> = memo(
             spacing={vertical ? 2 : 4}
           >
             <FormControl isRequired isInvalid={!!errors?.firstName}>
-              <FormLabel htmlFor="firstName">First Name</FormLabel>
+              <FormLabel htmlFor="firstName">
+                {t("contact.form.name-field.label", {
+                  defaultValue: "First Name",
+                })}
+              </FormLabel>
               <Input
                 id="firstName"
-                placeholder="John"
+                placeholder={t("contact.form.name-field.placeholder", {
+                  defaultValue: "John",
+                })}
                 focusBorderColor={`${colorScheme}.400`}
                 {...register("firstName")}
               />
@@ -258,10 +277,16 @@ const ContactForm: React.FC<IContactForm> = memo(
             </FormControl>
 
             <FormControl isRequired isInvalid={!!errors?.email}>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel>
+                {t("contact.form.email-field.label", {
+                  defaultValue: "Email Address",
+                })}
+              </FormLabel>
               <Input
                 type="email"
-                placeholder="john.doe@example.com"
+                placeholder={t("contact.form.email-field.placeholder", {
+                  defaultValue: "john.doe@example.com",
+                })}
                 focusBorderColor={`${colorScheme}.400`}
                 {...register("email")}
               />
@@ -276,25 +301,64 @@ const ContactForm: React.FC<IContactForm> = memo(
             spacing={4}
           >
             <FormControl isRequired isInvalid={!!errors?.email}>
-              <FormLabel>I’m interested in</FormLabel>
+              <FormLabel>
+                {t("contact.form.subject-field.label", {
+                  defaultValue: "I’m interested in",
+                })}
+              </FormLabel>
               <Select
-                placeholder="Select an option"
+                placeholder={t("contact.form.subject-field.placeholder", {
+                  defaultValue: "I’m interested in",
+                })}
                 {...register("interstedIn")}
               >
-                <option value="option1">BackEnd Development</option>
-                <option value="option2">FrontEnd Development</option>
-                <option value="option3">Web & Mobile Apps</option>
-                <option value="option4">Branding & Design</option>
-                <option value="option5">Consultancy</option>
+                <option value="option1">
+                  {t("contact.form.subject-field.options.backend.title", {
+                    defaultValue: "BackEnd Development",
+                  })}
+                </option>
+                <option value="option2">
+                  {t("contact.form.subject-field.options.frontend.title", {
+                    defaultValue: "FrontEnd Development",
+                  })}
+                </option>
+                <option value="option3">
+                  {t(
+                    "contact.form.subject-field.options.web-mobile-apps.title",
+                    {
+                      defaultValue: "Web & Mobile Apps",
+                    },
+                  )}
+                </option>
+                <option value="option4">
+                  {t(
+                    "contact.form.subject-field.options.branding-design.title",
+                    {
+                      defaultValue: "Branding & Design",
+                    },
+                  )}
+                </option>
+                <option value="option5">
+                  {t("contact.form.subject-field.options.consultancy.title", {
+                    defaultValue: "Consultancy",
+                  })}
+                </option>
               </Select>
             </FormControl>
           </Stack>
 
           <FormControl isRequired isInvalid={!!errors?.message}>
-            <FormLabel>Message</FormLabel>
+            <FormLabel>
+              {t("contact.form.message-field.label", {
+                defaultValue: "Message",
+              })}
+            </FormLabel>
             <Textarea
               {...register("message")}
-              placeholder="Briefly describe your current project or idea..."
+              placeholder={t("contact.form.message-field.placeholder", {
+                defaultValue:
+                  "Briefly describe your current project or idea...",
+              })}
               resize="vertical"
               focusBorderColor={`${colorScheme}.400`}
             />
@@ -304,14 +368,19 @@ const ContactForm: React.FC<IContactForm> = memo(
           <Button
             type="submit"
             size="lg"
+            textTransform="uppercase"
             isFullWidth
             colorScheme={colorScheme}
             isLoading={isSubmitting}
           >
-            SUBMIT
+            {t("contact.form.submit-button", {
+              defaultValue: "SUBMIT",
+            })}
           </Button>
           <Text color={inactiveColor} mt={2} fontSize="sm">
-            We will get back to you as soon as possible.
+            {t("contact.form.we-will-get-back", {
+              defaultValue: "We will get back to you as soon as possible.",
+            })}
           </Text>
         </VStack>
       </form>

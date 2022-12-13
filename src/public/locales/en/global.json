@@ -1,0 +1,87 @@
+{
+  "common-words": {
+    "visit-website": "Visit Website"
+  },
+  "contact": {
+    "form": {
+      "email-field": {
+        "label": "Email Address",
+        "placeholder": "john.doe@example.com"
+      },
+      "message-field": {
+        "label": "Message",
+        "placeholder": "Briefly describe your current project or idea..."
+      },
+      "name-field": {
+        "label": "First Name",
+        "placeholder": "John"
+      },
+      "subject-field": {
+        "label": "I’m interested in",
+        "options": {
+          "backend": {
+            "title": "BackEnd Development"
+          },
+          "branding-design": {
+            "title": "Branding & Design"
+          },
+          "consultancy": {
+            "title": "Consultancy"
+          },
+          "frontend": {
+            "title": "FrontEnd Development"
+          },
+          "web-mobile-apps": {
+            "title": "Web & Mobile Apps"
+          }
+        },
+        "placeholder": "I’m interested in"
+      },
+      "submit-button": "SUBMIT",
+      "we-will-get-back": "We will get back to you as soon as possible."
+    },
+    "heading": "Everything begins with an idea.",
+    "subheading": "Get in touch today."
+  },
+  "experience-section": {
+    "info-points": {
+      "patent": {
+        "description": "Indoor inventory tracking system.",
+        "value": "Our own designed and patented product."
+      },
+      "projects": {
+        "description": "Software projects delivered",
+        "value": "30+"
+      },
+      "software-experience": {
+        "description": "of experience in software development",
+        "value": "15 years"
+      },
+      "tech-experience": {
+        "description": "of experience in the Technology industry",
+        "value": "40+ years"
+      }
+    },
+    "title": "Our Experience"
+  },
+  "footer": {
+    "about-us": "About us",
+    "address": "0206 NW 47th, Street Sunrise, FL 33351 US",
+    "based-in": "BASED IN",
+    "business-inquiries": "BUSINESS INQUIRIES",
+    "company": "Company",
+    "contact-us": "CONTACT US",
+    "email": "HELLO@GBXTECHNOLOGY.NET"
+  },
+  "gbx-partnership-section": {
+    "heading": "In partnership with:",
+    "image-alt-text": "Partner with GBX",
+    "site-link": "Visit Website"
+  },
+  "header": {
+    "about": "About us",
+    "clients": "Clients",
+    "contact": "Contact us",
+    "services": "Our services"
+  }
+}

@@ -1,5 +1,5 @@
 const withPlugins = require("next-compose-plugins");
-// const { i18n } = require("./next-i18next.config");
+const { i18n } = require("./next-i18next.config");
 
 // const optimizedImages = require("next-optimized-images");
 const path = require("path");
@@ -70,7 +70,7 @@ const nextConfig = {
       ? process.env.TEMPLATE_PURCHASE_LINK
       : "https://creativemarket.com/themebiotic",
   },
-  // i18n,
+  i18n,
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

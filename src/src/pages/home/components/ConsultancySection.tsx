@@ -2,6 +2,8 @@ import useScreenType from "@root/src/hooks/useScreenType";
 
 import React from "react";
 
+import { useTranslation } from "next-i18next";
+
 import {
   Box,
   Button,
@@ -20,6 +22,7 @@ import ConsultancyImage from "@assets/images/home/consultancy.jpg";
 import { useContactUsModal } from "@blocks/contact-us-modal";
 
 const ConsultancySection: React.FC = () => {
+  const { t } = useTranslation("home");
   const { onOpen } = useContactUsModal();
   const { isScreenSmallerThanTablet } = useScreenType();
 
@@ -37,23 +40,30 @@ const ConsultancySection: React.FC = () => {
         >
           <VStack justify="center" px={[4, 4, 8]}>
             <Stack color="black" maxW={"2xl"} align={"flex-start"} spacing={6}>
-              <Heading>Consultancy</Heading>
+              <Heading>
+                {t("consultency-section.title", {
+                  defaultValue: "Consultancy",
+                })}
+              </Heading>
 
               <Text fontSize="18px">
-                Regardless of whether you have an existing project or one that
-                is just beginning, our team of experts is qualified to help you
-                create, improve and transform it. We offer a one-to-one
-                consultancy service to take a strategic look into your project
-                and reach your technological objectives.
+                {t("consultency-section.description.content-1", {
+                  defaultValue:
+                    "Regardless of whether you have an existing project or one that is just beginning, our team of experts is qualified to help you create, improve and transform it. We offer a one-to-one consultancy service to take a strategic look into your project and reach your technological objectives.",
+                })}
               </Text>
 
               <Text fontSize="18px" marginTop="4">
-                Our expertise includes:
+                {t("consultency-section.description.content-2", {
+                  defaultValue: "Our expertise includes:",
+                })}
               </Text>
 
               <Text fontSize="18px" marginTop="4">
-                Django, Graph Creat, Python, UI/UX Development, AWS, React,Rest,
-                Vue, Node, Next.js, Express, Angular
+                {t("consultency-section.description.content-3", {
+                  defaultValue:
+                    "Django, Graph Creat, Python, UI/UX Development, AWS, React,Rest, Vue, Node, Next.js, Express, Angular",
+                })}
               </Text>
 
               <Stack direction={"row"}>
@@ -68,7 +78,9 @@ const ConsultancySection: React.FC = () => {
                     onOpen();
                   }}
                 >
-                  Schedule a Call
+                  {t("consultency-section.cta-text", {
+                    defaultValue: "Schedule a Call",
+                  })}
                 </Button>
               </Stack>
             </Stack>

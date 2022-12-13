@@ -1,8 +1,10 @@
 import useScreenType from "@root/src/hooks/useScreenType";
 
-import React from "react";
+import React, { useMemo } from "react";
 
 import styled from "styled-components";
+
+import { useTranslation } from "next-i18next";
 
 import {
   Box,
@@ -21,25 +23,6 @@ const StyledImage = styled.img`
   width: 100%;
   object-fit: cover;
 `;
-
-const EXPERIENCE_POINTS = [
-  {
-    title: "40+ years",
-    description: "of experience in the Technology industry",
-  },
-  {
-    title: "30+",
-    description: "Software projects delivered",
-  },
-  {
-    title: "15 years",
-    description: "of experience in software development",
-  },
-  {
-    title: "Our own designed and patented product.",
-    description: "Indoor inventory tracking system.",
-  },
-];
 
 const Feature: React.FC<{ title: string; description: string }> = ({
   title,
@@ -60,12 +43,61 @@ const Feature: React.FC<{ title: string; description: string }> = ({
 interface IOurExperienceSection extends ChakraProps, ThemingProps {}
 
 const OurExperienceSection: React.FC<IOurExperienceSection> = (props) => {
+  const { t } = useTranslation("global");
   const { isScreenSmallerThanTablet } = useScreenType();
+
+  const EXPERIENCE_POINTS = useMemo(
+    () => [
+      {
+        title: t("experience-section.info-points.tech-experience.value", {
+          defaultValue: "40+ years",
+        }),
+        description: t(
+          "experience-section.info-points.tech-experience.description",
+          {
+            defaultValue: "of experience in the Technology industry",
+          },
+        ),
+      },
+      {
+        title: t("experience-section.info-points.projects.value", {
+          defaultValue: "30+",
+        }),
+        description: t("experience-section.info-points.projects.description", {
+          defaultValue: "Software projects delivered",
+        }),
+      },
+      {
+        title: t("experience-section.info-points.software-experience.value", {
+          defaultValue: "15 years",
+        }),
+        description: t(
+          "experience-section.info-points.software-experience.description",
+          {
+            defaultValue: "of experience in software development",
+          },
+        ),
+      },
+      {
+        title: t("experience-section.info-points.patent.value", {
+          defaultValue: "Our own designed and patented product.",
+        }),
+        description: t("experience-section.info-points.patent.description", {
+          defaultValue: "Indoor inventory tracking system.",
+        }),
+      },
+    ],
+    [],
+  );
 
   return (
     <Box width="full" {...props}>
       <Container maxW="container.lg">
-        <Heading>Our Experience</Heading>
+        <Heading>
+          {t("experience-section.title", {
+            defaultValue: "Our Experience",
+          })}
+        </Heading>
 
         <Grid
           templateColumns={

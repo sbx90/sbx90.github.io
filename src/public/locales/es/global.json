@@ -1,0 +1,87 @@
+{
+  "common-words": {
+    "visit-website": "visit-website"
+  },
+  "contact": {
+    "form": {
+      "email-field": {
+        "label": "label",
+        "placeholder": "placeholder"
+      },
+      "message-field": {
+        "label": "label",
+        "placeholder": "placeholder"
+      },
+      "name-field": {
+        "label": "label",
+        "placeholder": "placeholder"
+      },
+      "subject-field": {
+        "label": "label",
+        "options": {
+          "backend": {
+            "title": "title"
+          },
+          "branding-design": {
+            "title": "title"
+          },
+          "consultancy": {
+            "title": "title"
+          },
+          "frontend": {
+            "title": "title"
+          },
+          "web-mobile-apps": {
+            "title": "title"
+          }
+        },
+        "placeholder": "placeholder"
+      },
+      "submit-button": "submit-button",
+      "we-will-get-back": "we-will-get-back"
+    },
+    "heading": "heading",
+    "subheading": "subheading"
+  },
+  "experience-section": {
+    "info-points": {
+      "patent": {
+        "description": "description",
+        "value": "value"
+      },
+      "projects": {
+        "description": "description",
+        "value": "value"
+      },
+      "software-experience": {
+        "description": "description",
+        "value": "value"
+      },
+      "tech-experience": {
+        "description": "description",
+        "value": "value"
+      }
+    },
+    "title": "title"
+  },
+  "footer": {
+    "about-us": "about-us",
+    "address": "address",
+    "based-in": "based-in",
+    "business-inquiries": "business-inquiries",
+    "company": "company",
+    "contact-us": "contact-us",
+    "email": "email"
+  },
+  "gbx-partnership-section": {
+    "heading": "heading",
+    "image-alt-text": "image-alt-text",
+    "site-link": "site-link"
+  },
+  "header": {
+    "about": "about",
+    "clients": "clients",
+    "contact": "contact",
+    "services": "services"
+  }
+}

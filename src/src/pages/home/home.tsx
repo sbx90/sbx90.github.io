@@ -4,6 +4,7 @@ import React, { memo, useContext } from "react";
 
 import { IconType } from "react-icons";
 
+import { useTranslation } from "next-i18next";
 import { NextSeo } from "next-seo";
 
 import {
@@ -30,7 +31,7 @@ import Layout from "@layouts/default";
 import AboutSection from "./components/AboutSection";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import ConsultancySection from "./components/ConsultancySection";
-import { ContactTansitionPage } from "./components/ContactForm";
+import { ContactTransitionPage } from "./components/ContactForm";
 import HeroSection from "./components/HeroSection";
 import OurExperienceSection from "./components/OurExperienceSection";
 import OurTeamSection from "./components/OurTeamSection";
@@ -73,6 +74,7 @@ const childVariants = {
 const Homepage = (): JSX.Element => {
   const theme = useContext(ThemeColorContext);
   const color = theme.colorScheme; // global default primary theme color
+  const { t } = useTranslation("home");
 
   return (
     <>
@@ -98,21 +100,39 @@ const Homepage = (): JSX.Element => {
               items={[
                 {
                   icon: MdBolt,
-                  title: "End-to-End Development",
+                  title: t("features.end-to-end.title", {
+                    defaultValue: "End-to-End Development",
+                  }),
                   body: [
-                    "Do you have an idea that you want to develop and turn into a successful product or service?",
-                    "We are ready to start from scratch and work by your side to deliver a world-class software product.",
+                    t("features.end-to-end.description.content-1", {
+                      defaultValue:
+                        "Do you have an idea that you want to develop and turn into a successful product or service?",
+                    }),
+                    t("features.end-to-end.description.content-2", {
+                      defaultValue:
+                        "We are ready to start from scratch and work by your side to deliver a world-class software product.",
+                    }),
                   ],
                 },
                 {
                   icon: VscDebugConsole,
-                  title: "System Improvement",
-                  body: "We take care of the analysis and review of your existing project or product to make any required technological upgrades, reduce costs and meet deadlines.",
+                  title: t("features.system-improvement.title", {
+                    defaultValue: "System Improvement",
+                  }),
+                  body: t("features.system-improvement.description.content-1", {
+                    defaultValue:
+                      "We take care of the analysis and review of your existing project or product to make any required technological upgrades, reduce costs and meet deadlines.",
+                  }),
                 },
                 {
                   icon: MdOutlineBrightness4,
-                  title: "Consultancy & Expertise:",
-                  body: "We can provide full consultancy services on any of your technological needs. We are more than happy to help you with professional feedback in any area of the technological development of your idea, project, or product.",
+                  title: t("features.consultancy.title", {
+                    defaultValue: "Consultancy & Expertise:",
+                  }),
+                  body: t("features.consultancy.description.content-1", {
+                    defaultValue:
+                      "We can provide full consultancy services on any of your technological needs. We are more than happy to help you with professional feedback in any area of the technological development of your idea, project, or product.",
+                  }),
                 },
               ]}
             />
@@ -134,7 +154,7 @@ const Homepage = (): JSX.Element => {
             <TestimonySection />
           </Box>
 
-          <ContactTansitionPage />
+          <ContactTransitionPage />
 
           <OurTeamSection />
         </VStack>
